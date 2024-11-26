@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workify - Data Diri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #f7fafc; /* Light background color */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-blue-500 p-4 flex justify-between items-center">
+        <div class="text-white text-xl font-semibold">WORKIFY</div>
+        <div class="space-x-4 text-white">
+            <button>Cari lowongan</button>
+            <button>Lihat Profil</button>
+            <button>Template CV</button>
+            <button>Zoom</button>
+        </div>
+    </nav>
+
+    <!-- Form Container -->
+    <main class="container mx-auto mt-8">
+        <div class="bg-blue-100 p-4 rounded-t-md">
+            <h2 class="text-lg font-semibold text-gray-700">Data Diri</h2>
+        </div>
+        <div class="bg-white p-8 shadow-md rounded-b-md">
+            <form class="space-y-6">
+                <!-- Nama Lengkap -->
+                <div>
+                    <label for="nama_lengkap" class="block text-gray-700">Nama Lengkap</label>
+                    <input
+                        id="nama_lengkap"
+                        name="nama_lengkap"
+                        class="w-full p-2 border rounded-md"
+                        placeholder="Nama Lengkap"
+                        type="text"
+                    />
+                </div>
+
+                <!-- Tempat / Tanggal Lahir -->
+                <div>
+                    <label for="ttl" class="block text-gray-700">Tempat / Tanggal Lahir</label>
+                    <input
+                        id="ttl"
+                        name="ttl"
+                        class="w-full p-2 border rounded-md"
+                        placeholder="Tempat / Tanggal Lahir"
+                        type="text"
+                    />
+                </div>
+
+                <!-- No. WhatsApp -->
+                <div>
+                    <label for="no_wa" class="block text-gray-700">No. WhatsApp</label>
+                    <input
+                        id="no_wa"
+                        name="no_wa"
+                        class="w-full p-2 border rounded-md"
+                        placeholder="No. WhatsApp"
+                        type="text"
+                    />
+                </div>
+
+                <!-- Jenis Kelamin -->
+                <div>
+                    <label for="jenis_kelamin" class="block text-gray-700">Jenis Kelamin</label>
+                    <select
+                        id="jenis_kelamin"
+                        name="jenis_kelamin"
+                        class="w-full p-2 border rounded-md"
+                    >
+                        <option>Pilih Jenis Kelamin</option>
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                </div>
+
+                <!-- Lokasi Saat Ini -->
+                <div>
+                    <label for="provinsi" class="block text-gray-700">Lokasi Saat Ini</label>
+                    <input
+                        id="provinsi"
+                        name="provinsi"
+                        class="w-full p-2 border rounded-md mb-2"
+                        placeholder="Masukkan Provinsi"
+                        type="text"
+                    />
+                    <input
+                        id="kota"
+                        name="kota"
+                        class="w-full p-2 border rounded-md mb-2"
+                        placeholder="Masukkan Kota/Kabupaten"
+                        type="text"
+                    />
+                    <input
+                        id="kecamatan"
+                        name="kecamatan"
+                        class="w-full p-2 border rounded-md"
+                        placeholder="Masukkan Kecamatan"
+                        type="text"
+                    />
+                </div>
+
+                <!-- Simpan Button -->
+                <div class="flex justify-center mt-4">
+                    <button type="submit" class="bg-blue-700 text-white px-6 py-2 rounded-md">
+                        SIMPAN
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

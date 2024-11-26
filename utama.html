@@ -13,7 +13,6 @@
       background-repeat: no-repeat;
   }
 </style>
-
 </head>
 <body>
 
@@ -61,7 +60,7 @@
       <!-- Buttons -->
       <a href="masuk.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Masuk</a>
       <button class="flex items-center text-blue-900">
-  
+
       <!-- Settings Icon -->
       <a href="#"class="hover:shadow-lg">
           <svg class="w-6 h-6 text-blue-800 dark:text-whitearia-hidden="true xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -80,32 +79,44 @@
           </svg>
       </button>
       </div>
-  
 </header>    
 
+<!-- Pencarian -->
+<div class="bg-blue-300 py-6 text-center mt-10">
+  <div class="container mx-auto">
+    <div class="flex justify-center items-center space-x-4">
 
+      <!-- Dropdown Jenis Kerjaan -->
+      <select class="p-2 rounded-md border border-gray-300 w-1/4">
+        <option disabled selected>Pilih Jenis Kerjaan</option> <!-- Placeholder -->
+          <option value="1">Full Time</option>
+          <option value="2">Part Time</option>
+        </optgroup>
+      </select>      
 
-  <!-- Pencarian -->
-  <div class="bg-blue-300 py-6 text-center mt-10">
-    <div class="container mx-auto">
-      <div class="flex justify-center items-center space-x-4">
-        <select class="p-2 rounded-md border border-gray-300 w-1/4">
-          <option>Jenis Kerjaan</option>
-        </select>
-        <select class="p-2 rounded-md border border-gray-300 w-1/4">
-          <option>Klasifikasi Pekerjaan</option>
-        </select>
-        <select class="p-2 rounded-md border border-gray-300 w-1/4">
-          <option>Di mana</option>
-        </select>
-        <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Cari</button>
-      </div>
-      <div class="mt-4 flex items-center justify-center">
-        <input type="checkbox" class="mr-2">
-        <label for="checkbox" class="text-white">Lokasi terdekat</label>
+      <!-- Dropdown Klasifikasi Pekerjaan -->
+      <select id="klasifikasi" class="p-2 rounded-md border border-gray-300 w-1/4">
+        <option selected disabled>Klasifikasi Pekerjaan</option>
+      </select>
+
+      <!-- Dropdown Lokasi -->
+      <select id="provinsi" class="p-2 rounded-md border border-gray-300 w-1/4">
+        <option selected disabled>Di mana</option>
+      </select>
+
+      <!-- Checkbox dan Tombol Cari -->
+      <div class="mt-4 flex items-center justify-center space-x-4">
+        <div class="flex items-center">
+          <input type="checkbox" id="nearby" class="mr-2">
+          <label for="nearby" class="text-white">Lokasi terdekat</label>
+        </div>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
+          Cari
+        </button>
       </div>
     </div>
   </div>
+</div>
 
   <!-- Hero Section -->
   <section class="bg-blue-100 text-center py-12 mt-20">
@@ -119,14 +130,84 @@
   <!-- Rekomendasi Perusahaan -->
   <section class="py-8 bg-blue-100/50 p-4 mt-20">
     <h2 class="text-xl font-semibold text-gray-700 text-center">REKOMENDASI PERUSAHAAN</h2>
-    <div class="flex justify-center items-center space-x-6 mt-6">
-      <img src="https://via.placeholder.com/100" alt="Telkom Indonesia" class="w-24 h-24 object-cover">
-      <img src="https://via.placeholder.com/100" alt="Garuda Indonesia" class="w-24 h-24 object-cover">
-      <img src="https://via.placeholder.com/100" alt="Gojek" class="w-24 h-24 object-cover">
-      <img src="https://via.placeholder.com/100" alt="BNI" class="w-24 h-24 object-cover">
-      <img src="https://via.placeholder.com/100" alt="Aqua" class="w-24 h-24 object-cover">
-      <img src="https://via.placeholder.com/100" alt="Pertamina" class="w-24 h-24 object-cover">
+    <div class="flex justify-center items-center space-x-6 mt-10">
+      <img src="asset/img/telkom.png" alt="Telkom Indonesia" class="w-24 h-24 object-cover">
+      <img src="asset/img/garuda.png" alt="Garuda Indonesia" class="w-24 h-24 object-cover">
+      <img src="asset/img/gojek.png" alt="Gojek" class="w-24 h-24 object-cover">
+      <img src="asset/img/bni.png" alt="BNI" class="w-24 h-24 object-cover">
+      <img src="asset/img/shopee.png" alt="Shopee" class="w-24 h-24 object-cover">
+      <img src="asset/img/pertamina.png" alt="Pertamina" class="w-24 h-24 object-cover">
     </div>
   </section>
+
+  <script>
+    // Daftar provinsi dalam array
+    const provinsiList = [
+      "Aceh", "Bali", "Banten", "Bengkulu", "DI Yogyakarta", "DKI Jakarta", 
+      "Gorontalo", "Jambi", "Jawa Barat", "Jawa Tengah", "Jawa Timur", 
+      "Kalimantan Barat", "Kalimantan Selatan", "Kalimantan Tengah", 
+      "Kalimantan Timur", "Kalimantan Utara", "Kepulauan Bangka Belitung", 
+      "Kepulauan Riau", "Lampung", "Maluku", "Maluku Utara", 
+      "Nusa Tenggara Barat", "Nusa Tenggara Timur", "Papua", "Papua Barat", 
+      "Papua Tengah", "Papua Pegunungan", "Papua Selatan", "Papua Barat Daya", 
+      "Riau", "Sulawesi Barat", "Sulawesi Selatan", "Sulawesi Tengah", 
+      "Sulawesi Tenggara", "Sulawesi Utara", "Sumatera Barat", 
+      "Sumatera Selatan", "Sumatera Utara"
+    ];
+  
+    // Ambil elemen dropdown
+    const dropdown = document.getElementById("provinsi");
+  
+    // Tambahkan setiap provinsi sebagai opsi
+    provinsiList.forEach((provinsi) => {
+      const option = document.createElement("option");
+      option.value = provinsi; // Nilai untuk backend
+      option.textContent = provinsi; // Teks yang ditampilkan
+      dropdown.appendChild(option); // Tambahkan opsi ke dropdown
+    });
+  </script>
+  
+  <script>
+    // Daftar klasifikasi pekerjaan di Indonesia
+    const klasifikasiPekerjaanList = [
+      "Administrasi & Manajemen",
+      "Akuntansi & Keuangan",
+      "Arsitektur & Desain Interior",
+      "Kesehatan & Medis",
+      "Edukasi & Pelatihan",
+      "Hukum & Legal",
+      "Hotel, Restoran & Pariwisata",
+      "IT & Teknologi",
+      "Insinyur & Teknik",
+      "Jasa Keamanan",
+      "Jasa Transportasi & Logistik",
+      "Keahlian Teknik & Mekanik",
+      "Kreatif & Desain Grafis",
+      "Manufaktur & Produksi",
+      "Marketing & Pemasaran",
+      "Media & Komunikasi",
+      "Penjualan & Retail",
+      "Pertanian & Perikanan",
+      "Properti & Real Estate",
+      "Riset & Pengembangan",
+      "Sumber Daya Manusia (HR)",
+      "Seni & Hiburan",
+      "Keuangan & Asuransi",
+      "Energi & Pertambangan",
+      "Telekomunikasi",
+      "Lainnya"
+    ];
+  
+    // Ambil elemen dropdown untuk klasifikasi pekerjaan
+    const klasifikasiDropdown = document.getElementById("klasifikasi");
+  
+    // Tambahkan setiap klasifikasi sebagai opsi
+    klasifikasiPekerjaanList.forEach((klasifikasi) => {
+      const option = document.createElement("option");
+      option.value = klasifikasi; // Nilai untuk backend
+      option.textContent = klasifikasi; // Teks yang ditampilkan
+      klasifikasiDropdown.appendChild(option); // Tambahkan opsi ke dropdown
+    });
+  </script>
 </body>
 </html>
