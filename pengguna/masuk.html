@@ -7,28 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            background-image: url("asset/img/background.png"); /* Ganti dengan path gambar Anda */
+            background-image: url("../asset/img/background.png"); /* Ganti dengan path gambar Anda */
             background-size: cover; /* Sesuaikan ukuran gambar agar menutupi seluruh latar */
             background-position: center; /* Posisikan gambar di tengah */
             background-repeat: no-repeat; /* Hindari pengulangan gambar */
         }
     </style>
-    <script>
-        function togglePassword() {
-            const passwordField = document.getElementById('password');
-            const eyeIcon = document.getElementById('eye-icon');
-            const eyeClosedIcon = document.getElementById('eye-closed-icon');
-            if (passwordField.type === 'password') {
-                passwordField.type = 'text';
-                eyeIcon.style.display = 'block';
-                eyeClosedIcon.style.display = 'none';
-            } else {
-                passwordField.type = 'password';
-                eyeIcon.style.display = 'none';
-                eyeClosedIcon.style.display = 'block';
-            }
-        }
-    </script>
+    
 </head>
 <body>
 
@@ -41,7 +26,7 @@
     
         <!-- Logo -->
         <div class="flex items-center space-x-4">
-            <img src="asset/img/logo.png" alt="Workify Logo" class="h-8">
+            <img src="../asset/img/logo.png" alt="Workify Logo" class="h-8">
             <div>
                 <h1 class="text-lg font-bold text-blue-900">WORKIFY</h1>
                 <p class="text-sm text-blue-700">Find your jobs</p>
@@ -101,37 +86,6 @@
     
 
 
-    <!-- Script -->
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-    
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
-    
-    <script>
-        function validateForm() {
-            const email = document.getElementById('email').value.trim();
-            const password = document.getElementById('password').value.trim();
-        
-            if (!email || !password) {
-                alert("Email dan password tidak boleh kosong!");
-                return false;
-            }
-        
-            // Validasi format email (opsional)
-            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-            if (!emailPattern.test(email)) {
-                alert("Format email tidak valid!");
-                return false;
-            }
-        
-            return true; // Lanjutkan submit jika valid
-        }
-        </script>        
-
 <!-- Container utama untuk memusatkan konten -->
 <div class="h-screen flex items-center justify-center">
     <main class="bg-blue-100 shadow-lg rounded-lg p-8 w-full max-w-md">
@@ -172,10 +126,10 @@
         <!-- Tombol Login dengan Media Sosial -->
         <div class="flex justify-center space-x-4 mt-4">
             <button class="bg-white shadow-md rounded-full p-2 hover:shadow-lg">
-                <img src="asset/img/google.png" alt="Google" class="h-6">
+                <img src="../asset/img/google.png" alt="Google" class="h-6">
             </button>
             <button class="bg-white shadow-md rounded-full p-2 hover:shadow-lg">
-                <img src="asset/img/facebook.png" alt="Facebook" class="h-6">
+                <img src="/asset/img/facebook.png" alt="Facebook" class="h-6">
             </button>
             <button class="bg-white shadow-md rounded-full p-2 hover:shadow-lg">
                 <img src="/asset/img/twitter.png" alt="Twitter" class="h-6">
