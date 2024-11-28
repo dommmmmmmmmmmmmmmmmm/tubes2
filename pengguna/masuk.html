@@ -92,18 +92,22 @@
             <div>
                 <label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
                 <input type="email" id="email" name="email" placeholder="Masukkan e-mail" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
+            </div> <br>
             <div>
                 <label for="password" class="block text-sm font-medium text-gray-700">Kata Sandi</label>
                 <div class="relative">
-                    <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <button type="button" class="absolute inset-y-0 right-3 flex items-center focus:outline-none" onclick="togglePassword()">
-                        <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display: block;">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        <svg id="eye-icon-open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                         </svg>
-                        <svg id="eye-closed-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display: none;">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3l18 18M10.477 10.477a3 3 0 014.243 4.243m2.83-2.83a7.5 7.5 0 01-10.606 0m14.264.707a9.961 9.961 0 01-4.172 3.555m-2.683 1.341A9.962 9.962 0 013.786 8.209m4.172-3.555A9.962 9.962 0 0112 4.5c1.116 0 2.194.186 3.214.528" />
+                        <svg id="eye-icon-closed" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                d="M3 3l18 18M10.477 10.477a3 3 0 014.243 4.243m2.83-2.83a7.5 7.5 0 01-10.606 0m14.264.707a9.961 9.961 0 01-4.172 3.555m-2.683 1.341A9.962 9.962 0 013.786 8.209m4.172-3.555A9.962 9.962 0 0112 4.5c1.116 0 2.194.186 3.214.528" />
                         </svg>
                     </button>
                 </div>
@@ -111,8 +115,9 @@
          
 
                 <!-- Tambahkan kelas text-right di sini -->
-                <a href="#" class="text-blue-900 text-sm hover:underline mt-2 block text-right">Lupa kata sandi?</a>
-            </div>                
+                <a href="lupa_sandi.html" class="text-blue-900 text-sm hover:underline mt-2 block text-right">Lupa kata sandi?</a>
+            </div> <br> 
+
             <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 rounded-lg hover:bg-blue-700">MASUK</button>
         </form>
         
@@ -134,6 +139,11 @@
             <button class="bg-white shadow-md rounded-full p-2 hover:shadow-lg">
                 <img src="/asset/img/twitter.png" alt="Twitter" class="h-6">
             </button>
+        </div> <br>
+
+        <!-- Tautan ke halaman login -->
+            <p class="text-center text-sm text-gray-600">Belum punya akun? <a href="daftar.html" class="text-blue-600 hover:underline">Daftar di sini</a></p>
+        </main>
         </div>
         
     </main>
