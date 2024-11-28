@@ -44,18 +44,7 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17h6l3 3v-3h2V9h-2M4 4h11v8H9l-3 3v-3H4V4Z"/>
                 </svg>
             </a>
-        
-            <!-- Settings Icon -->
-           
-                
-                
-                <!-- Buttons -->
-                <a href="daftar.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 ">Daftar</a>
-                <button class="flex items-center text-blue-900">
-            
-                    
-              
-            
+    
                 <a href="#" class="text-blue-800 font-medium hover:text-white ">Untuk Pencari kerja</a>
                 <a href="#" class="hover:shadow-lg">
                     <svg class="w-6 h-6 text-blue-800 ml-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -116,9 +105,58 @@
         </div>  
     </div>  
 
-   
+    <?php 
+    switch (@$_GET['pg']) {
     
-   
-
+        case 'dashboard':
+            include 'dashboard/dashboard.php';
+            break;
+        
+        // daftar inventaris
+            case 'inventaris':
+            include 'inventaris/inventaris.php';
+            break;
+            case 'tambahbarang':
+            include 'inventaris/tambah.php';
+            break;
+            case 'editbarang':
+            include 'inventaris/edit.php';
+            break;
+    
+        // pengembalian
+            case 'pengembalian':
+            include 'pengembalian/pengembalian.php';
+            break;
+            
+    
+        // peminjaman
+            case 'peminjaman':
+            include 'peminjaman/peminjaman.php';
+                break;
+            case 'tambahpeminjam':
+                include 'peminjaman/proses_peminjaman.php';
+                break;
+            case 'editpeminjam':
+                include 'peminjaman/edit.php';
+                break;
+                    
+        // laporan
+                case 'laporan':
+                    include 'laporan/laporan.php';
+                    break;
+                    case 'laporan_peminjaman':
+                        include 'laporan/laporan_peminjaman.php';
+                        break;
+                        case 'laporan_pengembalian':
+                            include 'laporan/laporan_pengembalian.php';
+                            break;
+    
+    
+        
+        default:
+            include 'dashboard/dashboard.php';
+            break;
+    }
+     ?>
 </body>  
 </html>
