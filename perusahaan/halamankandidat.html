@@ -4,9 +4,12 @@
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  
-    <title>Lowongan Kerja</title>  
+    <title>Rekomendasi Kandidat</title>  
 </head>  
 <body class="bg-gray-100">  
+
+   
+      
     
 
         <header>
@@ -30,7 +33,7 @@
                 <!--<button class="p-2 rounded-full bg-white text-blue-800 shadow-md hover:shadow-lg"> -->
             
                     <!-- Icons -->
-            <div class="flex items-center space-x-4 ml-auto">
+        <div class="flex items-center space-x-4 ml-auto">
             <!-- Bell Icon -->
             <a href="" class="hover:shadow-lg">
                 <svg class="w-6 h-6 text-blue-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -73,59 +76,73 @@
                 </div>
             
         </header> 
-        
-    <div class="flex">  
-        <!-- Sidebar -->  
-        <div class="w-1/4 bg-white shadow-md p-4">  
-             
-            <ul>
-                <li class="mb-4"><a href="#" class="text-gray-600 hover:text-blue-500">Dashboard</a></li>   
-                <li class="mb-4"><a href="#" class="text-gray-600 hover:text-blue-500">Lowongan</a></li>  
-                <li class="mb-4"><a href="#" class="text-gray-600 hover:text-blue-500">Pengaturan Akun</a></li>  
-                <li class="mb-4"><a href="#" class="text-gray-600 hover:text-blue-500">Syarat & Kebijakan</a></li>  
-            </ul>  
-        </div>  
-
-       
-
-   
-    <div class="container mx-auto p-5">  
-        <header class="flex justify-between items-center mb-5">  
-            <h1 class="text-2xl font-bold">Lowongan Kerja</h1>  
-            <button class="bg-blue-500 text-white px-4 py-2 rounded">Buat Lowongan Kerja</button>  
-        </header>  
-        <nav class="mb-5">  
-            <ul class="flex space-x-4">  
-                <li><a href="#" class="text-blue-600">Semua</a></li>  
-                <li><a href="#" class="text-gray-600">Aktif</a></li>  
-                <li><a href="#" class="text-gray-600">Non Aktif</a></li>  
-                <li><a href="#" class="text-gray-600">Ditutup</a></li>  
-            </ul>  
-        </nav>  
-        <div class="space-y-5">  
-            <div class="bg-white p-4 rounded-lg shadow-md">  
-                <h2 class="text-xl font-semibold">Software Developer</h2>  
-                <p class="text-gray-600">📍 di Jl. Kenangan Jujur No.123, Kota Bandung</p>  
-                <div class="flex justify-between mt-4 items-center">  
-                    <div>  
-                        <span class="text-gray-500">🟢 0 Dilihat</span>  
-                        <span class="text-gray-500">🔄 3 Lamaran</span>  
-                    </div>  
-                    <span class="text-gray-500">Diperbarui pada 1 Juni 2024</span>  
-                </div>  
+        <div class="flex">  
+            <!-- Sidebar -->  
+            <div class="w-1/4 bg-white shadow-md p-4">  
+                 
+                <ul>
+                    <li class="mb-4"><a href="#" class="text-gray-600 hover:text-blue-500">Dashboard</a></li>   
+                    <li class="mb-4"><a href="#" class="text-gray-600 hover:text-blue-500">Lowongan</a></li>  
+                    <li class="mb-4"><a href="#" class="text-gray-600 hover:text-blue-500">Pengaturan Akun</a></li>  
+                    <li class="mb-4"><a href="#" class="text-gray-600 hover:text-blue-500">Syarat & Kebijakan</a></li>  
+                </ul>  
             </div>  
-            <div class="bg-white p-4 rounded-lg shadow-md">  
-                <h2 class="text-xl font-semibold">UI/UX Designer</h2>  
-                <p class="text-gray-600">📍 di Jl. Kenangan Jujur No.123, Kota Bandung</p>  
-                <div class="flex justify-between mt-4 items-center">  
-                    <div>  
-                        <span class="text-gray-500">🔴 0 Dilihat</span>  
-                        <span class="text-gray-500">🖋️ 4 Lamaran</span>  
+
+            <!-- Konten Utama -->  
+            <div class="w-3/4 ml-5">  
+                <h1 class="text-2xl font-bold mb-5">Rekomendasi Kandidat</h1>  
+                <div class="space-y-4">  
+                    <!-- Daftar Kandidat -->  
+                    <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-between">  
+                        <div class="flex items-center">  
+                            <img src="https://via.placeholder.com/50" alt="Kang Haerin" class="rounded-full mr-4">  
+                            <div>  
+                                <h2 class="font-semibold">Kang Haerin</h2>  
+                                <p>📍 Surabaya</p>  
+                                <p>🛠️ UI/UX Designer</p>  
+                            </div>  
+                        </div>  
+                        <button class="bg-blue-500 text-white px-4 py-1 rounded">Pilih</button>  
                     </div>  
-                    <span class="text-gray-500">Diperbarui pada 2 Juli 2024</span>  
+                    <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-between">  
+                        <div class="flex items-center">  
+                            <img src="https://via.placeholder.com/50" alt="Kim Sunoo" class="rounded-full mr-4">  
+                            <div>  
+                                <h2 class="font-semibold">Kim Sunoo</h2>  
+                                <p>📍 Palembang</p>  
+                                <p>🛠️ Developer Web</p>  
+                            </div>  
+                        </div>  
+                        <button class="bg-blue-500 text-white px-4 py-1 rounded">Pilih</button>  
+                    </div>  
+                    <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-between">  
+                        <div class="flex items-center">  
+                            <img src="https://via.placeholder.com/50" alt="Cillian Murphy" class="rounded-full mr-4">  
+                            <div>  
+                                <h2 class="font-semibold">Cillian Murphy</h2>  
+                                <p>📍 Bandung</p>  
+                                <p>🛠️ Front End</p>  
+                            </div>  
+                        </div>  
+                        <button class="bg-blue-500 text-white px-4 py-1 rounded">Pilih</button>  
+                    </div>  
+                    <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-between">  
+                        <div class="flex items-center">  
+                            <img src="https://via.placeholder.com/50" alt="Lee Do Hyun" class="rounded-full mr-4">  
+                            <div>  
+                                <h2 class="font-semibold">Lee Do Hyun</h2>  
+                                <p>📍 Jakarta</p>  
+                                <p>🛠️ Cybersecurity</p>  
+                            </div>  
+                        </div>  
+                        <button class="bg-blue-500 text-white px-4 py-1 rounded">Pilih</button>  
+                    </div>  
                 </div>  
             </div>  
         </div>  
     </div>  
+</body>  
+</html>  
+ 
 </body>  
 </html>
