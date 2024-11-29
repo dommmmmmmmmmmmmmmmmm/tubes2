@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <title>Edit Profil - WORKIFY</title>
+    <title>Pengaturan Akun</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+
 <!-- Header -->
 <header>
     <!-- Bagian Header -->
@@ -55,8 +56,6 @@
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
             </svg> 
         </a>
-    
-        <a href="#" class="text-blue-800 font-medium hover:text-white ml-5">Untuk Perusahaan</a>
         </nav>
 
             
@@ -102,79 +101,37 @@
                 </svg>
                 <span class="text-blue-800 ml-1">Pengaturan</span>
             </a>
-        </div>
-        <a href="#" class="text-blue-800 font-medium hover:underline py-2">Untuk Perusahaan</a>
     </div>
 </div>
-</header>
+</header> 
 
-    <!-- Edit Profil Section -->
-    <section id="edit-profil" class="container mx-auto px-6 py-12">
-        <h2 class="text-2xl font-bold text-blue-800 mb-6">Edit Profil Pengguna</h2>
-        <div class="bg-white rounded-lg shadow-lg p-6">
-            <form action="#" method="POST">
-                <div class="flex flex-col md:flex-row items-center space-x-6">
-                    <!-- Profil Picture -->
-                    <div class="flex-shrink-0">
-                        <img id="profil-img" src="../asset/img/profil.jpg" alt="Profil" class="w-32 h-32 rounded-full object-cover">
-                        <!-- Upload Button -->
-                        <input type="file" id="file-upload" class="mt-4 hidden" accept="image/*" onchange="previewImage(event)">
-                        <label for="file-upload" class="mt-2 cursor-pointer text-blue-800 font-medium hover:text-blue-900">Ubah Foto</label>
-                    </div>
+<!-- Main Content -->
+<div class="container mx-auto p-4">
+    <div class="flex space-x-4">
+        <!-- Sidebar -->
+        <aside class="w-1/4 bg-white border border-gray-300 rounded-lg p-4 shadow">
+            <ul class="space-y-4">
+                <li class="border-b pb-2">
+                    <a href="#" class="text-blue-600 font-semibold hover:underline">Pengaturan Akun</a>
+                </li>
+                <li class="border-b pb-2">
+                    <a href="#" class="text-gray-500 hover:text-blue-600 hover:underline">Syarat & Kebijakan</a>
+                </li>
+            </ul>
+        </aside>
 
-                    <!-- Profil Details -->
-                    <div class="mt-4 md:mt-0 w-full">
-                        <div class="mb-4">
-                            <label for="name" class="block text-blue-800 font-medium">Nama Lengkap</label>
-                            <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Nama Lengkap" value="Nama Pengguna">
-                        </div>
-                        <div class="mb-4">
-                            <label for="email" class="block text-blue-800 font-medium">Email</label>
-                            <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="email@example.com" value="email@example.com">
-                        </div>
-                        <div class="mb-4">
-                            <label for="phone" class="block text-blue-800 font-medium">Telepon</label>
-                            <input type="text" id="phone" name="phone" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="08123456789" value="08123456789">
-                        </div>
-                        <div class="mb-4">
-                            <label for="address" class="block text-blue-800 font-medium">Alamat</label>
-                            <input type="text" id="address" name="address" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Jl. Contoh No. 123, Jakarta" value="Jl. Contoh No. 123, Jakarta">
-                        </div>
+        <!-- Main Content -->
+        <main class="flex-1 bg-white border border-gray-300 rounded-lg p-4 shadow space-y-4">
 
-                        <div class="mt-6 flex space-x-4">
-                            <button type="submit" class="bg-blue-800 text-white py-2 px-4 rounded-lg hover:bg-blue-900">
-                                Simpan Perubahan
-                            </button>
-                            <a href="lihatprofil.html">
-                                <button type="button" class="bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600">
-                                    Batal
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
+        <!-- Edit Profil Button -->
+        <a href="editprofil.html" class="block w-full border border-gray-300 rounded-lg p-4 text-left font-semibold text-gray-700 hover:bg-gray-100">
+            Edit Profil
+        </a>
 
-    <!-- Script -->
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Function to preview the uploaded image
-        function previewImage(event) {
-            const reader = new FileReader();
-            reader.onload = function() {
-                const output = document.getElementById('profil-img');
-                output.src = reader.result;
-            };
-            reader.readAsDataURL(event.target.files[0]);
-        }
-    </script>
+        <!-- Log Out Button -->
+        <a href="logout.html" class="block w-full border border-gray-300 rounded-lg p-4 text-left font-semibold text-red-600 hover:bg-red-100">
+            Log Out
+        </a>
+        </main>
 </body>
 </html>
