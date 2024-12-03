@@ -12,7 +12,7 @@
         }  
     </style>  
 </head>  
-<body class="flex flex-col">
+<body class="flex flex-col min-h-screen">
     <header>
         <!-- Bagian Header -->
         <div class="bg-blue-200 bg-opacity-70 w-full">
@@ -60,22 +60,21 @@
         </div>
     </header> 
 
-        
-    </header> 
-
-    <div class="bg-blue-200 bg-opacity-80 rounded-lg p-8 shadow-lg w-96">  
-        <h1 class="text-xl font-bold text-center mb-4">HALO! Sebelum memulai perjalanan Anda mencari kandidat, yuk isi terlebih dahulu informasi di bawah ini.</h1>  
-        <form>  
-            <div class="mb-4">  
-                <label for="company-name" class="block text-sm font-medium text-gray-700">Apa nama Perusahaan anda?</label>  
-                <input type="text" id="company-name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="Nama Perusahaan" required>  
-            </div>  
-            <div class="mb-6">  
-                <label for="industry" class="block text-sm font-medium text-gray-700">Perusahaan anda berdiri di industri apa?</label>  
-                <input type="text" id="industry" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="Industri" required>  
-            </div>  
-            <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition">Masukkan</button>  
-        </form>  
+    <div class="flex items-center justify-center flex-grow">  
+        <div class="bg-blue-200 bg-opacity-80 rounded-lg p-8 shadow-lg w-96">  
+            <h1 class="text-xl font-bold text-center mb-4">HALO! Sebelum memulai perjalanan Anda mencari kandidat, yuk isi terlebih dahulu informasi di bawah ini.</h1>  
+            <form>  
+                <div class="mb-4">  
+                    <label for="company-name" class="block text-sm font-medium text-gray-700">Apa nama Perusahaan anda?</label>  
+                    <input type="text" id="company-name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="Nama Perusahaan" required>  
+                </div>  
+                <div class="mb-6">  
+                    <label for="industry" class="block text-sm font-medium text-gray-700">Perusahaan anda berdiri di industri apa?</label>  
+                    <input type="text" id="industry" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="Industri" required>  
+                </div>  
+                <button type="submit" class="w -full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition">Masukkan</button>  
+            </form>  
+        </div>  
     </div>  
 </body>  
 </html>
