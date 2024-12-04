@@ -105,59 +105,6 @@
             </div>  
         </div>  
     </div>  
-
-    <?php 
-    switch (@$_GET['pg']) {
-    
-        case 'dashboard':
-            include 'dashboard/dashboard.php';
-            break;
-        
-        // daftar inventaris
-            case 'inventaris':
-            include 'inventaris/inventaris.php';
-            break;
-            case 'tambahbarang':
-            include 'inventaris/tambah.php';
-            break;
-            case 'editbarang':
-            include 'inventaris/edit.php';
-            break;
-    
-        // pengembalian
-            case 'pengembalian':
-            include 'pengembalian/pengembalian.php';
-            break;
-            
-    
-        // peminjaman
-            case 'peminjaman':
-            include 'peminjaman/peminjaman.php';
-                break;
-            case 'tambahpeminjam':
-                include 'peminjaman/proses_peminjaman.php';
-                break;
-            case 'editpeminjam':
-                include 'peminjaman/edit.php';
-                break;
-                    
-        // laporan
-                case 'laporan':
-                    include 'laporan/laporan.php';
-                    break;
-                    case 'laporan_peminjaman':
-                        include 'laporan/laporan_peminjaman.php';
-                        break;
-                        case 'laporan_pengembalian':
-                            include 'laporan/laporan_pengembalian.php';
-                            break;
-    
-    
-        
-        default:
-            include 'dashboard/dashboard.php';
-            break;
-    }
      ?>
 </body>  
 </html>

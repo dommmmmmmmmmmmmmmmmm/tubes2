@@ -1,3 +1,3 @@
 <?php 
-$koneksi = mysqli_connect("localhost","root","","workify");
-?>                
+$koneksi = mysqli_connect("localhost","root","","inventaris_ilyas");
+ ?>                
