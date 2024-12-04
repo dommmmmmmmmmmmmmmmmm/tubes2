@@ -75,9 +75,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div>
                     <label class="block font-medium text-gray-700">Jenis Kelamin</label>
                     <select name="jenis_kelamin" class="w-full border border-gray-300 rounded px-3 py-2">
-                        <option value="Bebas">Bebas</option>
-                        <option value="Laki-laki">Laki-laki</option>
-                        <option value="Perempuan">Perempuan</option>
+                        <option value="Pria & Wanita">Pria & Wanita</option>
+                        <option value="Pria">Pria</option>
+                        <option value="Wanita">Wanita</option>
                     </select>
                 </div>
                 <div>
