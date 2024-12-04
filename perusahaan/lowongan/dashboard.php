@@ -1,20 +1,23 @@
 <?php
 include "dbconfig.php";
 
+// Mendapatkan tanggal saat ini
+$currentDate = date("Y-m-d"); // Format YYYY-MM-DD
+
 // Query untuk menghitung jumlah lowongan
 $query = "SELECT COUNT(*) AS jumlah_lowongan FROM lowongan";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result);
 $jumlah_lowongan = $row['jumlah_lowongan'];
 
-// Query untuk menghitung lowongan yang masih aktif
-$query_aktif = "SELECT COUNT(*) AS jumlah_aktif FROM lowongan WHERE status = 'Buka'";
+// Query untuk menghitung lowongan yang masih aktif (Buka)
+$query_aktif = "SELECT COUNT(*) AS jumlah_aktif FROM lowongan WHERE tanggal_buka <= '$currentDate' AND tanggal_tutup >= '$currentDate'";
 $result_aktif = mysqli_query($conn, $query_aktif);
 $row_aktif = mysqli_fetch_assoc($result_aktif);
 $jumlah_aktif = $row_aktif['jumlah_aktif'];
 
-// Query untuk menghitung lowongan yang sudah ditutup
-$query_tutup = "SELECT COUNT(*) AS jumlah_tutup FROM lowongan WHERE status = 'Tutup'";
+// Query untuk menghitung lowongan yang sudah ditutup (Tutup)
+$query_tutup = "SELECT COUNT(*) AS jumlah_tutup FROM lowongan WHERE tanggal_tutup < '$currentDate' AND tanggal_tutup IS NOT NULL";
 $result_tutup = mysqli_query($conn, $query_tutup);
 $row_tutup = mysqli_fetch_assoc($result_tutup);
 $jumlah_tutup = $row_tutup['jumlah_tutup'];
@@ -51,23 +54,23 @@ $jumlah_tutup = $row_tutup['jumlah_tutup'];
 
             <!-- Statistik Lowongan -->
             <section class="grid grid-cols-3 gap-6 mb-8">
-                <div class="bg-white p-6 shadow rounded flex flex-col items-center">
-                    <h5 class="text-lg font-semibold text-gray-800">Total Lowongan</h5>
-                    <p class="text-2xl font-bold text-blue-500"><?php echo $jumlah_lowongan; ?></p>
-                </div>
+            <div class="bg-white p-6 shadow rounded flex flex-col items-center">
+                <h5 class="text-lg font-semibold text-gray-800">Total Lowongan</h5>
+                <p class="text-2xl font-bold text-blue-500"><?php echo $jumlah_lowongan; ?></p>
+            </div>
 
-                <div class="bg-white p-6 shadow rounded flex flex-col items-center">
-                    <h5 class="text-lg font-semibold text-gray-800">Lowongan Aktif</h5>
-                    <p class="text-2xl font-bold text-green-500"><?php echo $jumlah_aktif; ?></p>
-                </div>
+            <div class="bg-white p-6 shadow rounded flex flex-col items-center">
+                <h5 class="text-lg font-semibold text-gray-800">Lowongan Aktif</h5>
+                <p class="text-2xl font-bold text-green-500"><?php echo $jumlah_aktif; ?></p>
+            </div>
 
-                <div class="bg-white p-6 shadow rounded flex flex-col items-center">
-                    <h5 class="text-lg font-semibold text-gray-800">Lowongan Ditutup</h5>
-                    <p class="text-2xl font-bold text-red-500"><?php echo $jumlah_tutup; ?></p>
-                </div>
-            </section>
+            <div class="bg-white p-6 shadow rounded flex flex-col items-center">
+                <h5 class="text-lg font-semibold text-gray-800">Lowongan Ditutup</h5>
+                <p class="text-2xl font-bold text-red-500"><?php echo $jumlah_tutup; ?></p>
+            </div>
+        </section>
 
-            <!-- Call to Action -->
+            <!-- Buat Lowongan Baru -->
             <section class="bg-blue-500 text-white p-6 rounded">
                 <h4 class="text-xl font-semibold mb-2">Saatnya Posting Lowongan Pertama!</h4>
                 <p class="mb-4">WORKIFY akan membantu Anda mendapatkan kandidat terbaik sesuai kriteria.</p>

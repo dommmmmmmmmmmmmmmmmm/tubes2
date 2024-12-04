@@ -4,6 +4,9 @@ include "dbconfig.php";
 // Query untuk mendapatkan data lowongan
 $query = "SELECT * FROM lowongan";
 $result = mysqli_query($conn, $query);
+
+// Mendapatkan tanggal saat ini (tanpa waktu)
+$currentDate = date("Y-m-d"); // Format YYYY-MM-DD
 ?>
 
 <!DOCTYPE html>
@@ -60,11 +63,25 @@ $result = mysqli_query($conn, $query);
                         </thead>
                         <tbody>
                             <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                                <?php 
+                                    // Mendapatkan tanggal buka dan tutup tanpa waktu (menjamin format Y-m-d)
+                                    $tanggalBuka = date("Y-m-d", strtotime($row['tanggal_buka'])); 
+                                    $tanggalTutup = date("Y-m-d", strtotime($row['tanggal_tutup'])); 
+
+                                    // Menentukan status berdasarkan tanggal sekarang
+                                    if ($currentDate >= $tanggalBuka && $currentDate <= $tanggalTutup) {
+                                        $status = 'Buka';
+                                        $statusClass = 'bg-green-500'; // Hijau untuk Buka
+                                    } else {
+                                        $status = 'Tutup';
+                                        $statusClass = 'bg-red-500'; // Merah untuk Tutup
+                                    }
+                                ?>
                                 <tr class="hover:bg-gray-100">
                                     <td class="border px-4 py-2 text-center"><?php echo $row['id']; ?></td>
                                     <td class="border px-4 py-2 text-center"><?php echo $row['posisi']; ?></td>
-                                    <td class="border px-4 py-2 text-center"><?php echo $row['tanggal_buka']; ?></td>
-                                    <td class="border px-4 py-2 text-center"><?php echo $row['tanggal_tutup']; ?></td>
+                                    <td class="border px-4 py-2 text-center"><?php echo $tanggalBuka; ?></td>
+                                    <td class="border px-4 py-2 text-center"><?php echo $tanggalTutup; ?></td>
                                     <td class="border px-4 py-2 text-center"><?php echo $row['alamat_perusahaan']; ?></td>
                                     <td class="border px-4 py-2 text-center"><?php echo "Rp " . number_format($row['gaji'], 0, ',', '.'); ?></td>
                                     <td class="border px-4 py-2 text-center"><?php echo $row['jenis_kelamin']; ?></td>
@@ -73,16 +90,23 @@ $result = mysqli_query($conn, $query);
                                     <td class="border px-4 py-2 text-center"><?php echo $row['pengalaman_kerja']; ?></td>
                                     <td class="border px-4 py-2 text-center"><?php echo $row['deskripsi_pekerjaan']; ?></td>
                                     <td class="border px-4 py-2 text-center">
-                                        <span class="px-2 py-1 rounded-full text-white <?php echo ($row['status'] === 'Buka') ? 'bg-green-500' : 'bg-red-500'; ?>">
-                                            <?php echo $row['status']; ?>
+                                        <span class="px-2 py-1 rounded-full text-white <?php echo $statusClass; ?>">
+                                            <?php echo $status; ?>
                                         </span>
                                     </td>
-                                    <td class="border border-gray-300 px-4 py-2">
-                                        <a href="delete.php?id=<?php echo $row['id']; ?>" 
-                                        class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
-                                        onclick="return confirm('Apakah Anda yakin ingin menghapus lowongan ini?');">
-                                        Hapus
-                                        </a>
+                                    <td class="border border-gray-300 px-4 py-2 text-center">
+                                        <div class="flex justify-center space-x-2">
+                                            <a href="edit.php?id=<?php echo $row['id']; ?>" 
+                                            class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600">
+                                            Edit
+                                            </a>
+                                            <a href="delete.php?id=<?php echo $row['id']; ?>" 
+                                            class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
+                                            onclick="return confirm('Apakah Anda yakin ingin menghapus lowongan ini?');">
+                                            Hapus
+                                            </a>
+                                        </div>
+                                    </td>
                                 </tr>
                             <?php endwhile; ?>
                         </tbody>
