@@ -55,6 +55,7 @@ $result = mysqli_query($conn, $query);
                                 <th class="border px-4 py-2 text-center">Pengalaman Kerja</th>
                                 <th class="border px-4 py-2 text-center">Deskripsi Pekerjaan</th>
                                 <th class="border px-4 py-2 text-center">Status</th>
+                                <th class="border border-gray-300 px-4 py-2">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -76,6 +77,12 @@ $result = mysqli_query($conn, $query);
                                             <?php echo $row['status']; ?>
                                         </span>
                                     </td>
+                                    <td class="border border-gray-300 px-4 py-2">
+                                        <a href="delete.php?id=<?php echo $row['id']; ?>" 
+                                        class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
+                                        onclick="return confirm('Apakah Anda yakin ingin menghapus lowongan ini?');">
+                                        Hapus
+                                        </a>
                                 </tr>
                             <?php endwhile; ?>
                         </tbody>
