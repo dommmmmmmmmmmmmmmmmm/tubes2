@@ -71,8 +71,8 @@
         <div class="w-1/4 bg-white shadow-md p-4">  
              
             <ul>
-                <li class="mb-4"><a href="#" class="text-gray-600 hover:text-blue-500">Dashboard</a></li>   
-                <li class="mb-4"><a href="#" class="text-gray-600 hover:text-blue-500">Lowongan</a></li>  
+                <li class="mb-4"><a href="dashboard.php" class="text-gray-600 hover:text-blue-500">Dashboard</a></li>   
+                <li class="mb-4"><a href="lowonganpekerjaan.html" class="text-gray-600 hover:text-blue-500">Lowongan</a></li>  
                 <li class="mb-4"><a href="#" class="text-gray-600 hover:text-blue-500">Pengaturan Akun</a></li>  
                 <li class="mb-4"><a href="#" class="text-gray-600 hover:text-blue-500">Syarat & Kebijakan</a></li>  
             </ul>  
