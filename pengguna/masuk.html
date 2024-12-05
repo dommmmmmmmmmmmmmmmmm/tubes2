@@ -45,12 +45,12 @@
                 </button>
             </div>
     
-          <!-- Mobile Menu -->
-          <div id="mobile-menu" class="hidden md:hidden bg-blue-200 px-6 pb-4 flex flex-col">
-            <a href="daftar.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 mt-4">Masuk</a>
-            <a href="../perusahaan/daftar.html" class="text-blue-800 font-medium hover:underline py-2">Untuk Perusahaan</a>
-          </div>
-        </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-blue-200 px-6 pb-4 flex flex-col">
+                <a href="daftar.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 mt-4">Masuk</a>
+                <a href="../perusahaan/daftar.html" class="text-blue-800 font-medium hover:underline py-2">Untuk Perusahaan</a>
+            </div>
+            </div>
     </header>
     
     <!-- JavaScript for Hamburger Menu -->
@@ -62,7 +62,24 @@
             mobileMenu.classList.toggle('hidden');
         });
     </script>
+
+<script>
+    function togglePassword() {
+        const passwordInput = document.getElementById('password');
+        const eyeOpenIcon = document.getElementById('eye-icon-open');
+        const eyeClosedIcon = document.getElementById('eye-icon-closed');
     
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            eyeOpenIcon.classList.add('hidden');
+            eyeClosedIcon.classList.remove('hidden');
+        } else {
+            passwordInput.type = 'password';
+            eyeOpenIcon.classList.remove('hidden');
+            eyeClosedIcon.classList.add('hidden');
+        }
+    }
+</script>
 
 <!-- Container utama untuk memusatkan konten -->
 <div class="h-screen flex items-center justify-center">
@@ -96,7 +113,9 @@
                 <a href="lupa_sandi.html" class="text-blue-900 text-sm hover:underline mt-2 block text-right">Lupa kata sandi?</a>
             </div> <br> 
 
-            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 rounded-lg hover:bg-blue-700">MASUK</button>
+            <a href="beranda.html" class="w-full">
+            <button type="submit" href="beranda.html" class="w-full bg-blue-600 text-white font-bold py-2 rounded-lg hover:bg-blue-700">MASUK</button>
+            </a>
         </form>
         
         <!-- Garis pembatas dengan teks -->
