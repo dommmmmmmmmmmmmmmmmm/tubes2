@@ -28,38 +28,37 @@
 </head>
 <body>
 
-    <header>
-        <div class="bg-blue-200 bg-opacity-70 w-full">
-          <div class="container mx-auto flex justify-between items-center px-6 py-4">
+<header class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-6 py-4">
             <!-- Logo -->
             <div class="flex items-center space-x-4">
-              <img src="../asset/img/logo.png" alt="Workify Logo" class="h-8">
-              <div>
-                <h1 class="text-lg font-bold text-blue-900">WORKIFY</h1>
-                <p class="text-sm text-blue-700">Find your jobs</p>
-              </div>
+                <img src="../asset/img/logo.png" alt="Workify Logo" class="h-10">
+                <div>
+                    <h1 class="text-2xl font-extrabold text-white tracking-tight">WORKIFY</h1>
+                    <p class="text-sm text-blue-200">Find Your Dream Job</p>
+                </div>
             </div>
-      
-            <!-- Menu -->
+    
+            <!-- Navigation Menu -->
             <nav class="hidden md:flex items-center space-x-6">
-              <a href="../perusahaan/daftar.html" class="text-blue-800 font-medium hover:text-white">Untuk Perusahaan</a>
+                <a href="../perusahaan/daftar.html" class="font-bold text-white hover:text-yellow-300">Untuk Perusahaan</a>
             </nav>
-      
+    
             <!-- Hamburger Menu -->
-            <button id="menu-toggle" class="md:hidden flex items-center text-blue-900 focus:outline-none">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-              </svg>
+            <button id="menu-toggle" class="md:hidden flex items-center text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
             </button>
-          </div>
-      
-          <!-- Mobile Menu -->
-          <div id="mobile-menu" class="hidden md:hidden bg-blue-200 px-6 pb-4 flex flex-col">
-            <a href="masuk.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 mt-4">Masuk</a>
-            <a href="../perusahaan/daftar.html" class="text-blue-800 font-medium hover:underline py-2">Untuk Perusahaan</a>
-          </div>
         </div>
-</header>  
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-blue-600 text-white">
+            <nav class="flex flex-col space-y-4 py-4 px-6">
+                <a href="../perusahaan/daftar.html" class="font-bold text-white hover:text-yellow-300">Untuk Perusahaan</a>
+            </nav>
+        </div>
+</header>
 
 <!-- Hero Section -->
 <section class="relative bg-gradient-to-r from-blue-500 to-blue-400 text-white py-16 lg:py-24">
@@ -131,24 +130,27 @@
 <section class="bg-gray-50 py-12">
     <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
         <h2 class="text-2xl font-bold text-gray-900 text-center mb-8">Keunggulan Menggunakan Website Kami</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Feature 1 -->
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                <i class="fas fa-briefcase text-blue-500 text-4xl"></i>
-                <h3 class="mt-4 text-lg font-semibold text-gray-900">Peluang Kerja Terbaik</h3>
-                <p class="mt-2 text-gray-600">Kami menyediakan ribuan lowongan pekerjaan dari berbagai sektor industri untuk memenuhi kebutuhan karier Anda.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <div class="p-6 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Ribuan Lowongan</h3>
+                    <p class="text-gray-600">Temukan ribuan pekerjaan sesuai dengan keahlian Anda di berbagai industri.</p>
+                </div>
             </div>
-            <!-- Feature 2 -->
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                <i class="fas fa-building text-blue-500 text-4xl"></i>
-                <h3 class="mt-4 text-lg font-semibold text-gray-900">Informasi Perusahaan Lengkap</h3>
-                <p class="mt-2 text-gray-600">Telusuri profil perusahaan dengan informasi lengkap, termasuk ulasan, budaya kerja, dan posisi yang tersedia.</p>
+            <!-- Card 2 -->
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <div class="p-6 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Template CV Profesional</h3>
+                    <p class="text-gray-600">Buat CV profesional yang menarik untuk meningkatkan peluang Anda.</p>
+                </div>
             </div>
-            <!-- Feature 3 -->
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                <i class="fas fa-search text-blue-500 text-4xl"></i>
-                <h3 class="mt-4 text-lg font-semibold text-gray-900">Pencarian Mudah & Cepat</h3>
-                <p class="mt-2 text-gray-600">Gunakan fitur pencarian yang cerdas untuk menemukan pekerjaan yang sesuai dengan keahlian dan lokasi Anda.</p>
+            <!-- Card 3 -->
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <div class="p-6 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Konsultasi Karier</h3>
+                    <p class="text-gray-600">Dapatkan saran karier dari para ahli untuk membantu Anda berkembang.</p>
+                </div>
             </div>
         </div>
     </div>
