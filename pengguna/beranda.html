@@ -12,210 +12,468 @@
         }
     </style>
 </head>
-<body>
 
-    <header class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 shadow-lg">
-        <div class="container mx-auto flex justify-between items-center px-6 py-4">
-            <!-- Logo -->
-            <div class="flex items-center space-x-4">
-                <img src="../asset/img/logo.png" alt="Workify Logo" class="h-10">
-                <div>
-                    <h1 class="text-2xl font-extrabold text-white tracking-tight">WORKIFY</h1>
-                    <p class="text-sm text-blue-200">Find Your Dream Job</p>
-                </div>
+<header class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+        <!-- Logo -->
+        <div class="flex items-left space-x-4">
+            <img src="../asset/img/logo.png" alt="Workify Logo" class="h-10">
+            <div>
+                <h1 class="text-2xl font-extrabold text-white tracking-tight">WORKIFY</h1>
+                <p class="text-sm text-blue-200">Find Your Dream Job</p>
             </div>
-    
+        </div>
+        
             <!-- Navigation Menu -->
             <nav class="hidden md:flex items-center space-x-6">
                 <a href="beranda.html" class="text-white font-medium hover:text-yellow-300 transition">Cari Lowongan</a>
                 <a href="template.html" class="text-white font-medium hover:text-yellow-300 transition">Template CV</a>
                 <a href="zoom.html" class="text-white font-medium hover:text-yellow-300 transition">Zoom</a>
-    
+                
                 <!-- Action Buttons -->
                 <div class="flex items-center space-x-4">
                     <!-- Notification Icon -->
                     <a href="notif.html" class="hover:scale-110 transition">
                         <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 5.365V3m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175 0 .593 0 1.193-.538 1.193H5.538c-.538 0-.538-.6-.538-1.193 0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 12 5.365Z" />
+                            d="M12 5.365V3m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175 0 .593 0 1.193-.538 1.193H5.538c-.538 0-.538-.6-.538-1.193 0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 12 5.365Z" />
                         </svg>
                     </a>
                     <!-- Chat Icon -->
                     <a href="chat.html" class="hover:scale-110 transition">
                         <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                d="M9 17h6l3 3v-3h2V9h-2M4 4h11v8H9l-3 3v-3H4V4Z" />
+                            d="M9 17h6l3 3v-3h2V9h-2M4 4h11v8H9l-3 3v-3H4V4Z" />
                         </svg>
                     </a>
-                    <!-- Settings Icon -->
-                    <a href="pengaturan.html" class="hover:scale-110 transition">
-                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                d="M21 13v-2a1 1 0 0 0-1-1h-.757l-.707-1.707.535-.536a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0l-.536.535L14 4.757V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v.757l-1.707.707-.536-.535a1 1 0 0 0-1.414 0L4.929 6.343a1 1 0 0 0 0 1.414l.536.536L4.757 10H4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h.757l.707 1.707-.535.536a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l.536-.535 1.707.707V20a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.757l1.707-.708.536.536a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-.535-.536.707-1.707H20a1 1 0 0 0 1-1Z" />
-                            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                        </svg>
-                    </a>
-                </div>
-                <!-- User Profile -->
-                <div class="flex items-center">
-                    <a href="lihatprofil.html">
-                        <img src="../asset/img/lisa.jpg" alt="Profile" class="w-10 h-10 rounded-full border-2 border-white">
-                    </a>
-                </div>
-            </nav>
-    
-            <!-- Hamburger Menu -->
-            <button id="menu-toggle" class="md:hidden flex items-center text-white focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
-        </div>
-    
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden bg-blue-500 text-white flex flex-col px-6 py-4 space-y-4">
-            <a href="beranda.html" class="font-medium hover:text-yellow-300">Cari Lowongan</a>
-            <a href="template.html" class="font-medium hover:text-yellow-300">Template CV</a>
-            <a href="zoom.html" class="font-medium hover:text-yellow-300">Zoom</a>
-        </div>
-    </header>
-    
-
-<!-- Pencarian -->
-<div class="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-500 py-10 text-left mt-10">
-    <div class="container mx-auto px-6">
-        <div class="flex flex-wrap justify-between items-center gap-6">
+                    
+                    <div class="relative">
+                        <!-- Profile Button with Elongated Border -->
+                        <button id="profile-toggle" class="flex items-center space-x-3 focus:outline-none px-4 py-2 rounded-full border-2 border-blue-600">
+                            <!-- Avatar -->
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center shadow-md">
+                                <img src="../asset/img/lisa.jpg" alt="Profile" class="w-10 h-10 rounded-full border-2 border-white">
+                            </div>
+                            <!-- Username and Icon -->
+                            <span class="text-lg font-semibold text-white flex items-center space-x-1">
+                                <span>DELL</span>
+                                <!-- Small Icon next to the username -->
+                                <svg id="dropdown-icon" class="w-4 h-4 text-white transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12l7-7 7 7" />
+                                </svg>
+                            </span>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div id="profile-dropdown" class="hidden absolute right-0 mt-3 w-56 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 transition-all duration-200">
+                            <div class="flex flex-col">
+                                <a href="profilsaya.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gradient-to-r from-blue-500 to-blue-400 hover:text-white transition">
+                                    <i class="fas fa-user mr-3 text-blue-500 group-hover:text-white"></i> Profil Saya
+                                </a>
+                                <a href="lamaransaya.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gradient-to-r from-blue-500 to-blue-400 hover:text-white transition">
+                                    <i class="fas fa-file-alt mr-3 text-blue-500 group-hover:text-white"></i> Lamaran Saya
+                                </a>
+                                <a href="logout.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-red-500 hover:text-white transition">
+                                    <i class="fas fa-power-off mr-3 text-red-500 group-hover:text-white"></i> Keluar
+                                </a>
+                            </div>
+                        </div>
+                    </div>  
+                </nav>
+            </header>
             
-            <!-- Dropdown Jenis Kerjaan -->
-            <div class="flex flex-col w-full sm:w-1/3 md:w-1/4">
-                <label for="jobType" class="text-white mb-2 font-semibold">Jenis Kerjaan</label>
-                <select id="jobType" class="p-3 rounded-lg border-0 shadow-lg w-full bg-white text-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all duration-200">
-                    <option disabled selected>Pilih Jenis Kerjaan</option>
-                    <option value="1">Full Time</option>
-                    <option value="2">Part Time</option>
-                </select>
+            <!-- JavaScript to Toggle the Dropdown -->
+            <script>
+    // Toggle the Profile Dropdown
+    document.getElementById('profile-toggle').addEventListener('click', function (event) {
+        const dropdown = document.getElementById('profile-dropdown');
+        dropdown.classList.toggle('hidden');
+        
+        // Stop the event from propagating to the document level
+        event.stopPropagation();
+    });
+    
+    // Get the dropdown icon element
+    const icon = document.getElementById('dropdown-icon');
+    
+    // Toggle icon rotation on click
+    icon.addEventListener('click', function () {
+        icon.classList.toggle('rotate-180'); // This will rotate the icon by 180 degrees
+    });
+    </script>
+
+<body>
+<div class="container mx-auto px-6 py-8">
+    <div class="flex flex-wrap justify-between items-center gap-6">
+        <!-- Dropdown Jenis Kerjaan -->
+        <div class="flex flex-col w-full sm:w-1/3 md:w-1/4">
+            <label for="jobType" class="text-blue-500 mb-2 font-semibold text-lg">Jenis Kerjaan</label>
+            <select id="jobType" class="p-3 rounded-lg border-2 border-gray-300 shadow-md w-full bg-white text-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-transform duration-300 ease-in-out transform hover:scale-105">
+                <option disabled selected>Pilih Jenis Kerjaan</option>
+                <option value="1">Full Time</option>
+                <option value="2">Part Time</option>
+            </select>
+        </div>
+
+        <!-- Dropdown Klasifikasi Pekerjaan -->
+        <div class="flex flex-col w-full sm:w-1/3 md:w-1/4">
+            <label for="jobClassification" class="text-blue-500 mb-2 font-semibold text-lg">Klasifikasi Pekerjaan</label>
+            <select id="jobClassification" class="p-3 rounded-lg border-2 border-gray-300 shadow-md w-full bg-white text-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-transform duration-300 ease-in-out transform hover:scale-105">
+                <option selected disabled>Pilih Klasifikasi</option>
+                <option value="1">Teknologi</option>
+                <option value="2">Pendidikan</option>
+            </select>
+        </div>
+
+        <!-- Dropdown Lokasi -->
+        <div class="flex flex-col w-full sm:w-1/3 md:w-1/4">
+            <label for="location" class="text-blue-500 mb-2 font-semibold text-lg">Lokasi</label>
+            <select id="location" class="p-3 rounded-lg border-2 border-gray-300 shadow-md w-full bg-white text-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-transform duration-300 ease-in-out transform hover:scale-105">
+                <option selected disabled>Pilih Lokasi</option>
+                <option value="1">Jakarta</option>
+                <option value="2">Surabaya</option>
+            </select>
+            
+            <!-- Checkbox Lokasi Terdekat -->
+            <div class="mt-3 flex items-center">
+                <input type="checkbox" id="nearby" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                <label for="nearby" class="text-blue-300 ml-2">Lokasi terdekat</label>
             </div>
+        </div>
 
-            <!-- Dropdown Klasifikasi Pekerjaan -->
-            <div class="flex flex-col w-full sm:w-1/3 md:w-1/4">
-                <label for="jobClassification" class="text-white mb-2 font-semibold">Klasifikasi Pekerjaan</label>
-                <select id="jobClassification" class="p-3 rounded-lg border-0 shadow-lg w-full bg-white text-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all duration-200">
-                    <option selected disabled>Pilih Klasifikasi</option>
-                    <option value="1">Teknologi</option>
-                    <option value="2">Pendidikan</option>
-                </select>
-            </div>
-
-            <!-- Dropdown Lokasi -->
-            <div class=" flex-row w-full sm:w-1/3 md:w-1/4">
-                <label for="location" class="text-white mb-2 pb-9 font-semibold block">Lokasi</label>
-                <select id="location" class="p-3 rounded-lg border-0  shadow-lg w-full bg-white text-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all duration-200">
-                    <option selected disabled>Pilih Lokasi</option>
-                    <option value="1">Jakarta</option>
-                    <option value="2">Surabaya</option>
-                </select>
-
-                <!-- Checkbox Lokasi Terdekat -->
-                <div class="mt-3 flex items-center">
-                    <div class="row">
-
-                        <input type="checkbox" id="nearby" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
-                        <label for="nearby" class="text-white ml-2">Lokasi terdekat</label>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tombol Cari -->
-            <div class="flex flex-col justify-center w-full sm:w-1/3 pt-7 md:w-auto">
-                <button class="bg-white text-blue-600 px-6 py-3 font-bold rounded-full shadow-lg hover:bg-blue-700 hover:text-white transition-all duration-200 transform hover:scale-105 w-full sm:w-auto">
-                    Cari
-                </button>
-            </div>
+        <!-- Tombol Cari -->
+        <div class="flex flex-col justify-center w-full sm:w-1/3 pt-7 md:w-auto">
+            <button class="bg-blue-600 text-white px-6 py-3 font-bold rounded-full shadow-lg hover:bg-blue-700 hover:scale-105 transition-all duration-200 transform hover:scale-105 w-full sm:w-auto">
+                Cari
+            </button>
         </div>
     </div>
 </div>
 
+<br>
 
-    <!-- Recommendations Section -->
-    <section class="container mx-auto p-6">
-        <h2 class="text-xl font-bold mb-4">Rekomendasi</h2>
-        <div class="grid grid-cols-2 gap-6">
-
-            <!-- Job Card -->
-            <div class="bg-white rounded shadow p-4 flex items-center justify-between">
-                <div>
-                    <h3 class="text-lg font-bold">Baru Saja</h3>
-                    <p>Barista<br>Starbucks<br>Buah Batu, Jawa Barat<br>Part Time</p>
-                    <p class="mt-2 text-blue-500">Rp. 1.500.000 / Bulan</p>
-                </div>
-                <img src="../asset/img/starbucks.png" alt="Starbucks Logo" class="w-25 h-20">
-            </div>
-            <div class="bg-white rounded shadow p-4 flex items-center justify-between">
-                <div>
-                    <h3 class="text-lg font-bold">Baru Saja</h3>
-                    <p>Barista<br>Tomoro Cafe<br>Buah Batu, Jawa Barat<br>Part Time</p>
-                    <p class="mt-2 text-blue-500">Rp. 1.500.000 / Bulan</p>
-                </div>
-                <img src="../asset/img/tomoro.png" alt="Tomoro Cafe Logo" class="w-30 h-20">
-            </div>
-            <div class="bg-white rounded shadow p-4 flex items-center justify-between">
-                <div>
-                    <h3 class="text-lg font-bold">Satu Minggu Yang Lalu</h3>
-                    <p>Barista<br>Tuku Cafe<br>Buah Batu, Jawa Barat<br>Part Time</p>
-                    <p class="mt-2 text-blue-500">Rp. 3.000.000 - Rp. 5.000.000 / Bulan</p>
-                </div>
-                <img src="../asset/img/tuku.png" alt="Tuku Cafe Logo" class="w-20 h-20">
-            </div>
-            <div class="bg-white rounded shadow p-4 flex items-center justify-between">
-                <div>
-                    <h3 class="text-lg font-bold">Satu Minggu Yang Lalu</h3>
-                    <p>Barista<br>Fore Cafe<br>Buah Batu, Jawa Barat<br>Part Time</p>
-                    <p class="mt-2 text-blue-500">Rp. 1.500.000 / Bulan</p>
-                </div>
-                <img src="../asset/img/fore.png" alt="Fore Cafe Logo" class="w-20 h-20">
-            </div>
-            <div class="bg-white rounded shadow p-4 flex items-center justify-between">
-                <div>
-                    <h3 class="text-lg font-bold">Dua Minggu Yang Lalu</h3>
-                    <p>Kasir<br>BreadTalk<br>Bandung, Jawa Barat<br>Full Time</p>
-                    <p class="mt-2 text-blue-500">Rp. 2.000.000 / Bulan</p>
-                </div>
-                <img src="../asset/img/breadtalk.png" alt="BreadTalk Logo" class="w-20 h-20">
-            </div>
-            <div class="bg-white rounded shadow p-4 flex items-center justify-between">
-                <div>
-                    <h3 class="text-lg font-bold">Dua Minggu Yang Lalu</h3>
-                    <p>Admin<br>Tokopedia<br>Jakarta Pusat, DKI Jakarta<br>Full Time</p>
-                    <p class="mt-2 text-blue-500">Rp. 4.000.000 - Rp. 6.000.000 / Bulan</p>
-                </div>
-                <img src="../asset/img/tokopedia.png" alt="Tokopedia Logo" class="w-20 h-20">
-            </div>
-            <div class="bg-white rounded shadow p-4 flex items-center justify-between">
-                <div>
-                    <h3 class="text-lg font-bold">Tiga Hari Yang Lalu</h3>
-                    <p>Customer Service<br>Telkom Indonesia<br>Surabaya, Jawa Timur<br>Full Time</p>
-                    <p class="mt-2 text-blue-500">Rp. 4.500.000 / Bulan</p>
-                </div>
-                <img src="../asset/img/telkom.png" alt="Telkom Indonesia logo" class="w-20 h-20">
-            </div>
-            <div class="bg-white rounded shadow p-4 flex items-center justify-between">
-                <div>
-                    <h3 class="text-lg font-bold">Satu Bulan Yang Lalu</h3>
-                    <p>Graphic Designer<br>Fiverr<br>Jakarta Pusat, DKI Jakarta<br>Full Time</p>
-                    <p class="mt-2 text-blue-500">Rp. 5.000.000 - Rp. 10.000.000 / Project</p>
-                </div>
-                <img src="../asset/img/fiverr.png" alt="Fiverr Logo" class="w-20 h-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <!-- Job Card 1 -->
+    <a href="loker.html" class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+        <div class="flex justify-between items-center">
+            <h2 class="text-lg font-semibold">
+                Field Collector (SLEMAN)
+            </h2>
+            <span class="text-blue-500 font-semibold">
+                Rp 3,5 jt-3,5 jt
+            </span>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-2">
+            <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                Full Time
+            </span>
+            <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                Part Time
+            </span>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-2">
+            <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                Kurang dari setah...
+            </span>
+            <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                Minimal SMA/SMK
+            </span>
+            <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                +3
+            </span>
+        </div>
+        <div class="flex items-center mt-4">
+            <img alt="Company logo" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/YAn3Ol3BszqeRCLG0m1dhfZV2kpdHEfYsD1GWoP2waUhwT0nA.jpg" width="40"/>
+            <div class="ml-2">
+                <p class="text-blue-500 font-semibold">
+                    Kredivo Group
+                </p>
+                <p class="text-gray-600">
+                    Kapanewon Depok, Sleman, DI Yogyakarta
+                </p>
             </div>
         </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 text-white py-6 mt-auto">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 WORKIFY. All Rights Reserved.</p>
+        <div class="flex justify-between items-center mt-4">
+            <div class="flex items-center">
+                <span class="bg-green-500 text-white px-2 py-1 rounded text-sm">
+                    Aktif Merekrut
+                </span>
+                <span class="text-gray-600 ml-2">
+                    Kemarin
+                </span>
+            </div>
         </div>
-    </footer>
+    </a>
+    <!-- Job Card 2 -->
+    <a href="loker.html" class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+        <div class="flex justify-between items-center">
+            <h2 class="text-lg font-semibold">
+                Field Collector (KLATEN)
+            </h2>
+            <span class="text-blue-500 font-semibold">
+                Rp 3,5 jt-3,5 jt
+            </span>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-2">
+            <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                Full Time
+            </span>
+            <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                Part Time
+            </span>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-2">
+            <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                Kurang dari setah...
+            </span>
+            <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                Minimal SMA/SMK
+            </span>
+            <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                +3
+            </span>
+        </div>
+        <div class="flex items-center mt-4">
+            <img alt="Company logo" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/YAn3Ol3BszqeRCLG0m1dhfZV2kpdHEfYsD1GWoP2waUhwT0 nA.jpg" width="40"/>
+            <div class="ml-2">
+                <p class="text-blue-500 font-semibold">
+                    Kredivo Group
+                </p>
+                <p class="text-gray-600">
+                    Klaten Tengah, Klaten, Jawa Tengah
+                </p>
+            </div>
+        </div>
+        <div class="flex justify-between items-center mt-4">
+            <div class="flex items-center">
+                <span class="bg-green-500 text-white px-2 py-1 rounded text-sm">
+                    Aktif Merekrut
+                </span>
+                <span class="text-gray-600 ml-2">
+                    Kemarin
+                </span>
+            </div>
+        </div>
+    </a>
+    <!-- Job Card 3 -->
+    <a href="loker.html" class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+        <div class="flex justify-between items-center">
+            <h2 class="text-lg font-semibold">
+                Field Collector (BANDAR LAMPUNG)
+            </h2>
+            <span class="text-blue-500 font-semibold">
+                Rp 3,5 jt-3,5 jt
+            </span>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-2">
+            <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                Full Time
+            </span>
+            <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                Part Time
+            </span>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-2">
+            <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                Kurang dari setah...
+            </span>
+            <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                Minimal SMA/SMK
+            </span>
+            <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                +3
+            </span>
+        </div>
+        <div class="flex items-center mt-4">
+            <img alt="Company logo" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/YAn3Ol3BszqeRCLG0m1dhfZV2kpdHEfYsD1GWoP2waUhwT0nA.jpg" width="40"/>
+            <div class="ml-2">
+                <p class="text-blue-500 font-semibold">
+                    Kredivo Group
+                </p>
+                <p class="text-gray-600">
+                    Sukabumi, Bandar Lampung, Lampung
+                </p>
+            </div>
+        </div>
+        <div class="flex justify-between items-center mt-4">
+            <div class="flex items-center">
+                <span class="bg-green-500 text-white px-2 py-1 rounded text-sm">
+                    Aktif Merekrut
+                </span>
+                <span class="text-gray-600 ml-2">
+                    Kemarin
+                </span>
+            </div>
+        </div>
+    </a>
+        <!-- Job Card 4 -->
+        <a href="loker.html" class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+            <div class="flex justify-between items-center">
+                <h2 class="text-lg font-semibold">
+                    Field Collector (MAGELANG)
+                </h2>
+                <span class="text-blue-500 font-semibold">
+                    Rp 3,5 jt-3,5 jt
+                </span>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-2">
+                <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                    Full Time
+                </span>
+                <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                    Part Time
+                </span>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-2">
+                <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                    Kurang dari setah...
+                </span>
+                <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                    Minimal SMA/SMK
+                </span>
+                <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                    +3
+                </span>
+            </div>
+            <div class="flex items-center mt-4">
+                <img alt="Company logo" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/YAn3Ol3BszqeRCLG0m1dhfZV2kpdHEfYsD1GWoP2waUhwT0nA.jpg" width="40"/>
+                <div class="ml-2">
+                    <p class="text-blue-500 font-semibold">
+                        Kredivo Group
+                    </p>
+                    <p class="text-gray-600">
+                        Magelang, Jawa Tengah
+                    </p>
+                </div>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+                <div class="flex items-center">
+                    <span class="bg-green-500 text-white px-2 py-1 rounded text-sm">
+                        Aktif Merekrut
+                    </span>
+                    <span class="text-gray-600 ml-2">
+                        Kemarin
+                    </span>
+                </div>
+            </div>
+        </a>
+        <!-- Job Card 5 -->
+        <a href="loker.html" class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+            <div class="flex justify-between items-center">
+                <h2 class="text-lg font-semibold">
+                    Field Collector (YOGYAKARTA)
+                </h2>
+                <span class="text-blue-500 font-semibold">
+                    Rp 3,5 jt-3,5 jt
+                </span>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-2">
+                <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                    Full Time
+                </span>
+                <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                    Part Time
+                </span>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-2">
+                <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                    Kurang dari setah...
+                </span>
+                <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                    Minimal SMA/SMK
+                </span>
+                <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                    +3
+                </span>
+            </div>
+            <div class="flex items-center mt-4">
+                <img alt="Company logo" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/YAn3Ol3BszqeRCLG0m1dhfZV2kpdHEfYsD1GWoP2waUhwT0nA.jpg" width="40"/>
+                <div class="ml-2">
+                    <p class="text-blue-500 font-semibold">
+                        Kredivo Group
+                    </p>
+                    <p class="text-gray-600">
+                        Kota Yogyakarta, DI Yogyakarta
+                    </p>
+                </div>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+                <div class="flex items-center">
+                    <span class="bg-green-500 text-white px-2 py-1 rounded text-sm">
+                        Aktif Merekrut
+                    </span>
+                    <span class="text-gray-600 ml-2">
+                        Kemarin
+                    </span>
+                </div>
+            </div>
+        </a>
+        <!-- Job Card 6 -->
+        <a href="loker.html" class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+            <div class="flex justify-between items-center">
+                <h2 class="text-lg font-semibold">
+                    Field Collector (SOLO)
+                </h2>
+                <span class="text-blue-500 font-semibold">
+                    Rp 3,5 jt-3,5 jt
+                </span>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-2">
+                <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                    Full Time
+                </span>
+                <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                    Part Time
+                </span>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-2">
+                <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                    Kurang dari setah...
+                </span>
+                <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                    Minimal SMA/SMK
+                </span>
+                <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">
+                    +3
+                </span>
+            </div>
+            <div class="flex items-center mt-4">
+                <img alt="Company logo" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/YAn3Ol3BszqeRCLG0m1dhfZV2kpdHEfYsD1GWoP2waUhwT0nA.jpg" width="40"/>
+                <div class="ml-2">
+                    <p class="text-blue-500 font-semibold">
+                        Kredivo Group
+                    </p>
+                    <p class="text-gray-600">
+                        Surakarta, Jawa Tengah
+                    </p>
+                </div>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+                <div class="flex items-center">
+                    <span class="bg-green-500 text-white px-2 py-1 rounded text-sm">
+                        Aktif Merekrut
+                    </span>
+                    <span class="text-gray-600 ml-2">
+                        Kemarin
+                    </span>
+                </div>
+            </div>
+        </a>
+</div>
+
+<br>
+
+<!-- Footer Section -->
+<footer class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 text-white py-6 mt-auto">
+    <div class="container mx-auto text-center">
+        <p>&copy; 2024 WORKIFY. All Rights Reserved.</p>
+        <div class="mt-2">
+            <a href="privacy.html" class="text-white hover:text-yellow-300 mx-2">Privacy Policy</a>
+            <a href="terms.html" class="text-white hover:text-yellow-300 mx-2">Terms of Service</a>
+            <a href="contact.html" class="text-white hover:text-yellow-300 mx-2">Contact Us</a>
+        </div>
+    </div>
+</footer>
 
 <!-- Script -->
 <script>
