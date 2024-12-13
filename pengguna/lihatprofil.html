@@ -1,24 +1,30 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <title>WORKIFY</title>
-</head>
-<body>
-
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Profile Page
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   .modal {
+    display: none;
+   }
+  </style>
+ </head>
+ <body class="bg-gray-100 flex flex-col min-h-screen">
     <header class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 shadow-lg">
         <div class="container mx-auto flex justify-between items-center px-6 py-4">
-<!-- Logo -->
-<div class="flex items-center space-x-4"> <!-- Adjusted margin to mr-4 -->
-    <img src="../asset/img/logo.png" alt="Workify Logo" class="h-10">
-    <div>
-        <h1 class="text-2xl font-extrabold text-white tracking-tight">WORKIFY</h1>
-        <p class="text-sm text-blue-200">Find Your Dream Job</p>
-    </div>
-</div>
-
+            <!-- Logo -->
+            <div class="flex items-left space-x-4">
+                <img src="../asset/img/logo.png" alt="Workify Logo" class="h-10">
+                <div>
+                    <h1 class="text-2xl font-extrabold text-white tracking-tight">WORKIFY</h1>
+                    <p class="text-sm text-blue-200">Find Your Dream Job</p>
+                </div>
+            </div>
     
             <!-- Navigation Menu -->
             <nav class="hidden md:flex items-center space-x-6">
@@ -42,118 +48,442 @@
                                 d="M9 17h6l3 3v-3h2V9h-2M4 4h11v8H9l-3 3v-3H4V4Z" />
                         </svg>
                     </a>
-                    <!-- Settings Icon -->
-                    <a href="pengaturan.html" class="hover:scale-110 transition">
-                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                d="M21 13v-2a1 1 0 0 0-1-1h-.757l-.707-1.707.535-.536a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0l-.536.535L14 4.757V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v.757l-1.707.707-.536-.535a1 1 0 0 0-1.414 0L4.929 6.343a1 1 0 0 0 0 1.414l.536.536L4.757 10H4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h.757l.707 1.707-.535.536a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l.536-.535 1.707.707V20a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.757l1.707-.708.536.536a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-.535-.536.707-1.707H20a1 1 0 0 0 1-1Z" />
-                            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                        </svg>
-                    </a>
-                </div>
-                <!-- User Profile -->
-                <div class="flex items-center">
-                    <a href="lihatprofil.html">
-                        <img src="../asset/img/lisa.jpg" alt="Profile" class="w-10 h-10 rounded-full border-2 border-white">
-                    </a>
-                </div>
+    
+                    <div class="relative">
+                        <!-- Profile Button with Elongated Border -->
+                        <button id="profile-toggle" class="flex items-center space-x-3 focus:outline-none px-4 py-2 rounded-full border-2 border-blue-600">
+                            <!-- Avatar -->
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center shadow-md">
+                                <img src="../asset/img/lisa.jpg" alt="Profile" class="w-10 h-10 rounded-full border-2 border-white">
+                            </div>
+                            <!-- Username and Icon -->
+                            <span class="text-lg font-semibold text-white flex items-center space-x-1">
+                                <span>DELL</span>
+                                <!-- Small Icon next to the username -->
+                                <svg id="dropdown-icon" class="w-4 h-4 text-white transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12l7-7 7 7" />
+                                </svg>
+                            </span>
+                        </button>
+                    
+                        <!-- Dropdown Menu -->
+                        <div id="profile-dropdown" class="hidden absolute right-0 mt-3 w-56 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 transition-all duration-200">
+                            <div class="flex flex-col">
+                                <a href="profilsaya.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gradient-to-r from-blue-500 to-blue-400 hover:text-white transition">
+                                    <i class="fas fa-user mr-3 text-blue-500 group-hover:text-white"></i> Profil Saya
+                                </a>
+                                <a href="lamaransaya.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gradient-to-r from-blue-500 to-blue-400 hover:text-white transition">
+                                    <i class="fas fa-file-alt mr-3 text-blue-500 group-hover:text-white"></i> Lamaran Saya
+                                </a>
+                                <a href="logout.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-red-500 hover:text-white transition">
+                                    <i class="fas fa-power-off mr-3 text-red-500 group-hover:text-white"></i> Keluar
+                                </a>
+                            </div>
+                        </div>
+                    </div>  
             </nav>
-    
-            <!-- Hamburger Menu -->
-            <button id="menu-toggle" class="md:hidden flex items-center text-white focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
-        </div>
-    
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden bg-blue-500 text-white flex flex-col px-6 py-4 space-y-4">
-            <a href="beranda.html" class="font-medium hover:text-yellow-300">Cari Lowongan</a>
-            <a href="template.html" class="font-medium hover:text-yellow-300">Template CV</a>
-            <a href="zoom.html" class="font-medium hover:text-yellow-300">Zoom</a>
-        </div>
     </header>
     
+    <!-- JavaScript to Toggle the Dropdown -->
+    <script>
+    // Toggle the Profile Dropdown
+    document.getElementById('profile-toggle').addEventListener('click', function (event) {
+        const dropdown = document.getElementById('profile-dropdown');
+        dropdown.classList.toggle('hidden');
+        
+        // Stop the event from propagating to the document level
+        event.stopPropagation();
+    });
+    
+    // Get the dropdown icon element
+    const icon = document.getElementById('dropdown-icon');
+    
+    // Toggle icon rotation on click
+    icon.addEventListener('click', function () {
+        icon.classList.toggle('rotate-180'); // This will rotate the icon by 180 degrees
+    });
+    </script>
 
-<!-- Profil Section -->
-<section id="profil" class="container mx-auto px-6 py-12">
-    <h2 class="text-2xl font-bold text-blue-800 mb-6">Profil Pengguna</h2>
-    <div class="bg-white rounded-lg shadow-lg p-6">
-        <!-- Foto Profil -->
-        <div class="flex items-center space-x-6">
-            <img id="profil-img" src="../asset/img/lisa.jpg" alt="Profil" class="w-32 h-32 rounded-full object-cover">
-            <input type="file" id="file-upload" class="hidden" accept="image/*" onchange="previewImage(event)">
-            <label for="file-upload" class="cursor-pointer text-blue-800 font-medium hover:text-blue-900">Ubah Foto</label>
+<!-- Main Content -->
+<div class="max-w-4xl mx-auto p-4 bg-white shadow-md rounded-lg mt-10">
+    <div class="flex items-center">
+      <img alt="Profile picture" class="w-24 h-24 rounded-full" src="https://storage.googleapis.com/a1aa/image/yQtCdX3buLoTGF5YbTyHCVfXip08snKlJYlniKYjREYnTL9JA.jpg" />
+      <div class="ml-4">
+        <h1 class="text-2xl font-bold">dell</h1>
+        <a class="text-blue-500" href="#">Ubah data diri</a>
+      </div>
+    </div>
+    <div class="mt-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <p><strong>WHATSAPP NUMBER</strong></p>
+          <p>+6283145267602</p>
         </div>
-
-        <!-- Data Diri -->
-        <div class="mt-6">
-            <label class="block font-medium text-blue-800">Nama Lengkap</label>
-            <input type="text" class="w-full mt-1 p-2 border border-gray-300 rounded-lg" placeholder="Masukkan nama lengkap">
-
-            <label class="block font-medium text-blue-800 mt-4">Email</label>
-            <input type="email" class="w-full mt-1 p-2 border border-gray-300 rounded-lg" placeholder="Masukkan email">
-
-            <label class="block font-medium text-blue-800 mt-4">Telepon</label>
-            <input type="text" class="w-full mt-1 p-2 border border-gray-300 rounded-lg" placeholder="Masukkan nomor telepon">
+        <div>
+          <p><strong>EMAIL (BELUM DIVERIFIKASI)</strong></p>
+          <p>dellsnw18@gmail.com</p>
         </div>
-
-        <!-- Tentang Saya -->
-        <div class="mt-6">
-            <label class="block font-medium text-blue-800">Tentang Saya</label>
-            <textarea class="w-full mt-1 p-2 border border-gray-300 rounded-lg" rows="4" placeholder="Tulis tentang diri Anda"></textarea>
+        <div>
+          <p><strong>LOKASI</strong></p>
+          <p>Jakarta Selatan, DKI Jakarta</p>
         </div>
-
-        <!-- Pendidikan -->
-        <div class="mt-6">
-            <label class="block font-medium text-blue-800">Pendidikan</label>
-            <textarea class="w-full mt-1 p-2 border border-gray-300 rounded-lg" rows="3" placeholder="Tambahkan pendidikan Anda (contoh: Universitas ABC - Teknik Informatika)"></textarea>
+        <div>
+          <p><strong>USIA, JENIS KELAMIN</strong></p>
+          <p>-</p>
         </div>
-
-        <!-- Pengalaman Kerja -->
-        <div class="mt-6">
-            <label class="block font-medium text-blue-800">Pengalaman Kerja</label>
-            <textarea class="w-full mt-1 p-2 border border-gray-300 rounded-lg" rows="4" placeholder="Tambahkan pengalaman kerja Anda (contoh: Web Developer di XYZ Corp)"></textarea>
+        <div>
+          <p><strong>PENDIDIKAN TERAKHIR</strong></p>
+          <p>Diploma (D1 - D4)</p>
         </div>
-
-        <!-- Kemampuan -->
-        <div class="mt-6">
-            <label class="block font-medium text-blue-800">Kemampuan</label>
-            <textarea class="w-full mt-1 p-2 border border-gray-300 rounded-lg" rows="3" placeholder="Tulis kemampuan Anda (contoh: HTML, CSS, JavaScript)"></textarea>
+        <div>
+          <p><strong>PENGALAMAN KERJA</strong></p>
+          <p>-</p>
         </div>
-
-        <!-- Unggah CV -->
-        <div class="mt-6">
-            <label class="block font-medium text-blue-800">Unggah CV</label>
-            <input type="file" class="w-full mt-1 p-2 border border-gray-300 rounded-lg" accept=".pdf,.doc,.docx">
+      </div>
+    </div>
+  
+    <!-- Tentang Saya -->
+    <div class="mt-12 border-t border-gray-300 pt-4">
+      <h2 class="text-xl font-semibold text-left">TENTANG SAYA</h2>
+      <p class="mt-2 mb-2 text-gray-600 text-center">Beritahu perusahaan apa yang membuatmu unggul untuk dipekerjakan</p>
+      <div class="flex justify-center">
+        <button class="text-blue-600 flex font-semibold items-center">
+            <i class="fas fa-plus-circle mr-2"></i>
+            TAMBAHKAN DESKRIPSI TENTANG SAYA
+        </button>
+    </div>
+    </div>
+  
+    <!-- Pengalaman Kerja -->
+    <div class="mt-12 border-t border-gray-300 pt-4">
+      <h2 class="text-xl font-semibold text-left">PENGALAMAN KERJA</h2>
+      <p class="mt-2 mb-2 text-gray-600 text-center">
+        Pastikan bagian ini terisi untuk meningkatkan peluangmu mendapatkan wawancara!
+      </p>
+      <div class="flex justify-center">
+        <button class="text-blue-600 flex font-semibold items-center">
+            <i class="fas fa-plus-circle mr-2"></i>
+            TAMBAHKAN PENGALAMAN KERJA
+        </button>
+    </div>
+    </div>
+  
+    <!-- Pendidikan -->
+    <div class="mt-12 border-t border-gray-300 pt-4">
+      <div class="flex justify-between items-center">
+        <h2 class="text-xl font-semibold">PENDIDIKAN</h2>
+        <a class="text-blue-500 flex font-semibold items-center cursor-pointer" id="add-education-btn">
+          <i class="fas fa-plus-circle mr-2"></i>
+          TAMBAHKAN PENDIDIKAN
+        </a>
+      </div>
+      <div class="mt-4 border-t-2 border-gray-200 pt-4">
+        <div class="flex justify-between items-center mb-2">
+          <div>
+            <h3 class="text-lg font-bold">Telkom University</h3>
+            <p class="text-gray-600">Sistem Informasi</p>
+            <p class="text-gray-600">September 2023 - Sekarang (setahun)</p>
+          </div>
+          <div class="flex space-x-4 text-blue-600">
+            <button class="flex items-center">
+              <i class="fas fa-pen mr-1"></i>
+              EDIT
+            </button>
+            <button class="flex items-center text-red-600">
+              <i class="fas fa-trash mr-1"></i>
+              HAPUS
+            </button>
+          </div>
         </div>
+      </div>
 
-        <!-- Tombol Simpan -->
-        <div class="mt-6">
-            <button class="bg-blue-800 text-white py-2 px-4 rounded-lg hover:bg-blue-900">Simpan Profil</button>
+      <!-- Resume -->
+      <div class="mt-12 border-t border-gray-300 pt-4">
+        <h2 class="text-xl font-semibold text-left">RESUME</h2>
+        <p class="mt-2 mb-2 text-gray-600 text-center">
+            Masukkan Resume/CV yang relevan dengan lowongan pekerjaan yang kamu lamar.
+        </p>
+        <div class="flex justify-center">
+            <button id="addResumeBtn" class="text-blue-600 font-semibold flex items-center">
+                <i class="fas fa-plus-circle text-bold mr-2"></i>
+                TAMBAHKAN RESUME
+            </button>
+        </div>
+    </div> 
+
+          <!-- Sertifikat -->
+    <div class="mt-12 border-t border-gray-300 pt-4">
+        <h2 class="text-xl font-semibold text-left">SERTIFIKAT</h2>
+        <p class="mt-2 mb-2 text-gray-600 text-center">
+            Beritahu prestasimu dengan menambahkan sertifikat disini.
+        </p>
+        <div class="flex justify-center">
+          <button class="text-blue-600 font-semibold flex items-center">
+              <i class="fas fa-plus-circle text-bold mr-2"></i>
+              TAMBAHKAN SERTIFIKAT
+          </button>
+      </div>
+      </div>
+    </div>
+</div>  
+
+<!-- Modal Resume -->
+<div id="resumeModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-sm">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-lg font-semibold">Resume</h2>
+            <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <p class="text-sm text-gray-700 mb-4">77,4% perusahaan menganggap resume sangat penting dalam lamaran pekerjaan.</p>
+        <div class="border-2 border-dashed border-blue-400 rounded-lg p-4 mb-4 text-center cursor-pointer">
+            <i class="fas fa-upload text-blue-400 mb-2"></i>
+            <p class="text-blue-400">Upload CV-mu</p>
+        
+            <!-- File input yang sebelumnya hidden, diubah menjadi terintegrasi -->
+            <input id="fileUpload" type="file" class="hidden" accept=".pdf,.doc,.docx">
+        </div>
+        <p id="fileName" class="text-xs text-gray-500 mb-4">Ukuran maksimum dokumen: 5 MB</p>
+        <div class="flex justify-end space-x-2">
+            <button id="cancelBtn" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">Batal</button>
+            <button id="saveBtn" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Simpan</button>
         </div>
     </div>
-</section>
+</div>
 
-    <!-- Footer Section -->
-    <footer class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 text-white py-6 mt-auto">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 WORKIFY. All Rights Reserved.</p>
+<!-- Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const addResumeBtn = document.getElementById('addResumeBtn');
+        const resumeModal = document.getElementById('resumeModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const fileUpload = document.getElementById('fileUpload');
+        const fileName = document.getElementById('fileName');
+
+        // Buka Modal
+        addResumeBtn.addEventListener('click', () => {
+            resumeModal.classList.remove('hidden');
+        });
+
+        // Tutup Modal dengan Tombol Close
+        closeModalBtn.addEventListener('click', () => {
+            resumeModal.classList.add('hidden');
+        });
+
+        // Tutup Modal dengan Tombol Batal
+        cancelBtn.addEventListener('click', () => {
+            resumeModal.classList.add('hidden');
+        });
+
+        // Menambahkan event listener untuk menampilkan input file saat area diklik
+        const uploadArea = document.querySelector('.border-dashed');
+        const fileInput = document.getElementById('fileUpload');
+
+        uploadArea.addEventListener('click', () => {
+            fileInput.click(); // Memicu klik pada input file
+        });
+
+        // Tampilkan Nama File yang Dipilih
+        fileUpload.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                if (file.size <= 5 * 1024 * 1024) { // Batas ukuran file 5 MB
+                    fileName.textContent = `File yang dipilih: ${file.name}`;
+                } else {
+                    alert("Ukuran file terlalu besar. Maksimum 5 MB.");
+                    fileUpload.value = ""; // Reset input file
+                }
+            }
+        });
+
+        // Simpan File
+        document.getElementById('saveBtn').addEventListener('click', () => {
+            const file = fileUpload.files[0];
+            if (!file) {
+                alert("Harap unggah file terlebih dahulu.");
+                return;
+            }
+            alert(`File "${file.name}" berhasil diunggah!`);
+            resumeModal.classList.add('hidden');
+        });
+    });
+</script>
+
+
+<!-- Modal Pendidikan-->
+<div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50" id="education-modal" style="display: none;">
+    <div class="bg-white w-full max-w-lg p-6 rounded-lg shadow-lg">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-semibold">Tambah Pendidikan</h2>
+            <button class="text-gray-500 hover:text-gray-700" id="close-modal-btn">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
-    </footer>
+        <p class="text-sm text-gray-600 mb-4">
+            Harap diperhatikan: Daftar institusi yang disediakan hanya berlaku untuk institusi di Indonesia.
+        </p>
+        <form>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700" for="tingkat-pendidikan">Tingkat Pendidikan*</label>
+                <select class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="tingkat-pendidikan">
+                    <option disabled selected value=""></option>
+                    <option value="sma-smk">SMA/SMK</option>
+                    <option value="diploma-1">Diploma 1 (D1)</option>
+                    <option value="diploma-2">Diploma 2 (D2)</option>
+                    <option value="diploma-3">Diploma 3 (D3)</option>
+                    <option value="sarjana">Sarjana (S1)</option>
+                    <option value="magister">Magister (S2)</option>
+                    <option value="doktor">Doktor (S3)</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700" for="institusi-pendidikan">Institusi Pendidikan*</label>
+                <input class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="institusi-pendidikan" type="text" />
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700" for="bidang-studi">Bidang Studi*</label>
+                <div class="relative mt-1">
+                    <input class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="bidang-studi" type="text" />
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <i class="fas fa-search text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700" for="dimulai-bulan">Dimulai*</label>
+                    <select class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="dimulai-bulan">
+                        <option disabled selected value="">Bulan</option>
+                        <option value="1">Januari</option>
+                        <option value="2">Februari</option>
+                        <option value="3">Maret</option>
+                        <option value="4">April</option>
+                        <option value="5">Mei</option>
+                        <option value="6">Juni</option>
+                        <option value="7">Juli</option>
+                        <option value="8">Agustus</option>
+                        <option value="9">September</option>
+                        <option value="10">Oktober</option>
+                        <option value="11">November</option>
+                        <option value="12">Desember</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700" for="dimulai-tahun">&nbsp;</label>
+                    <select class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="dimulai-tahun"></select>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700" for="berakhir-bulan">Berakhir*</label>
+                    <select class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="dimulai-bulan">
+                        <option disabled selected value="">Bulan</option>
+                        <option value="1">Januari</option>
+                        <option value="2">Februari</option>
+                        <option value="3">Maret</option>
+                        <option value="4">April</option>
+                        <option value="5">Mei</option>
+                        <option value="6">Juni</option>
+                        <option value="7">Juli</option>
+                        <option value="8">Agustus</option>
+                        <option value="9">September</option>
+                        <option value="10">Oktober</option>
+                        <option value="11">November</option>
+                        <option value="12">Desember</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700" for="berakhir-tahun">&nbsp;</label>
+                    <select class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="berakhir-tahun"></select>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700" for="informasi-tambahan">Informasi tambahan (Opsional)</label>
+                <textarea class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="informasi-tambahan" rows="4"></textarea>
+                <div class="text-right text-sm text-gray-500 mt-1">0 / 2000</div>
+            </div>
+            <div class="flex justify-end space-x-4">
+                <button class="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" type="button" id="cancel-btn">Batal</button>
+                <button class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" disabled type="submit">Simpan</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 <script>
-    // Pratinjau gambar unggahan
-    function previewImage(event) {
-        const reader = new FileReader();
-        reader.onload = function () {
-            const output = document.getElementById('profil-img');
-            output.src = reader.result;
-        };
-        reader.readAsDataURL(event.target.files[0]);
-    }
+    // Select elements
+    const modal = document.getElementById("education-modal");
+    const openModalBtn = document.getElementById("add-education-btn");
+    const closeModalBtn = document.getElementById("close-modal-btn");
+    const cancelBtn = document.getElementById("cancel-btn");
+
+    // Open modal
+    openModalBtn?.addEventListener("click", () => {
+        modal.style.display = "flex";
+    });
+
+    // Close modal
+    closeModalBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    cancelBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    // Close modal when clicking outside of the modal
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // Close modal with Escape key
+    window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.style.display === "flex") {
+            modal.style.display = "none";
+        }
+    });
+
+    // Populate year dropdowns dynamically
+    const startYear = 1950;
+    const endYear = new Date().getFullYear();
+    const tahunDropdowns = document.querySelectorAll("#dimulai-tahun, #berakhir-tahun");
+
+    tahunDropdowns.forEach((dropdown) => {
+        for (let i = endYear; i >= startYear; i--) {
+            const option = document.createElement("option");
+            option.value = i;
+            option.textContent = i;
+            dropdown.appendChild(option);
+        }
+    });
+
+    // Enable save button if all required inputs are filled
+    const saveButton = document.querySelector('button[type="submit"]');
+    const requiredInputs = document.querySelectorAll("#tingkat-pendidikan, #bidang-studi, #dimulai-bulan, #dimulai-tahun, #berakhir-bulan, #berakhir-tahun");
+
+    requiredInputs.forEach((input) => {
+        input.addEventListener("change", () => {
+            const allFilled = Array.from(requiredInputs).every((i) => i.value);
+            saveButton.disabled = !allFilled;
+        });
+    });
 </script>
+<br>
+
+<!-- Footer Section -->
+<footer class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 text-white py-6 mt-auto">
+    <div class="container mx-auto text-center">
+        <p>&copy; 2024 WORKIFY. All Rights Reserved.</p>
+        <div class="mt-2">
+            <a href="privacy.html" class="text-white hover:text-yellow-300 mx-2">Privacy Policy</a>
+            <a href="terms.html" class="text-white hover:text-yellow-300 mx-2">Terms of Service</a>
+            <a href="contact.html" class="text-white hover:text-yellow-300 mx-2">Contact Us</a>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
