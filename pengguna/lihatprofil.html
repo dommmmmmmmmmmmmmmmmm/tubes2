@@ -14,7 +14,7 @@
    }
   </style>
  </head>
- <body class="bg-gray-100 flex flex-col min-h-screen">
+ <body class="flex flex-col min-h-screen">
     <header class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 shadow-lg">
         <div class="container mx-auto flex justify-between items-center px-6 py-4">
             <!-- Logo -->
@@ -69,7 +69,7 @@
                         <!-- Dropdown Menu -->
                         <div id="profile-dropdown" class="hidden absolute right-0 mt-3 w-56 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 transition-all duration-200">
                             <div class="flex flex-col">
-                                <a href="profilsaya.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gradient-to-r from-blue-500 to-blue-400 hover:text-white transition">
+                                <a href="lihatprofil.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gradient-to-r from-blue-500 to-blue-400 hover:text-white transition">
                                     <i class="fas fa-user mr-3 text-blue-500 group-hover:text-white"></i> Profil Saya
                                 </a>
                                 <a href="lamaransaya.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gradient-to-r from-blue-500 to-blue-400 hover:text-white transition">
@@ -105,12 +105,13 @@
     </script>
 
 <!-- Main Content -->
-<div class="max-w-4xl mx-auto p-4 bg-white shadow-md rounded-lg mt-10">
+<div class="max-w-4xl mx-auto p-4 bg-white shadow-md rounded-lg mt-7">
     <div class="flex items-center">
       <img alt="Profile picture" class="w-24 h-24 rounded-full" src="https://storage.googleapis.com/a1aa/image/yQtCdX3buLoTGF5YbTyHCVfXip08snKlJYlniKYjREYnTL9JA.jpg" />
       <div class="ml-4">
         <h1 class="text-2xl font-bold">dell</h1>
-        <a class="text-blue-500" href="#">Ubah data diri</a>
+        <!-- Button to trigger edit form -->
+        <button class="text-blue-500" id="editButton">Ubah data diri</button>
       </div>
     </div>
     <div class="mt-4">
@@ -140,92 +141,233 @@
           <p>-</p>
         </div>
       </div>
+      
+      <!-- Edit Data Diri Modal -->
+      <div id="editModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 overflow-y-auto hidden">
+          <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6 my-8">
+              <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-bold">
+              Data Diri
+            </h2>
+            <button class="text-gray-500 hover:text-gray-700" id="closeButton">
+                <i class="fas fa-times">
+                </i>
+            </button>
+        </div>
+        <div class="flex justify-center mb-4">
+            <img alt="Profile picture placeholder" class="rounded-full bg-green-500 p-4" height="100" src="https://storage.googleapis.com/a1aa/image/YJnRu283E4IPG1Kn3v95I9BCE7eOwBeGKpt87eWCI5l2H00nA.jpg" width="100"/>
+        </div>
+        <form>
+            <div class="mb-4 flex space-x-2">
+           <div class="w-1/2">
+            <label class="block text-sm font-medium text-gray-700">
+             Nama depan*
+            </label>
+            <input class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" type="text" value="dell"/>
+        </div>
+        <div class="w-1/2">
+            <label class="block text-sm font-medium text-gray-700">
+                Nama belakang
+            </label>
+            <input class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" type="text"/>
+        </div>
     </div>
+    <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">
+            Nomor WhatsApp
+        </label>
+        <input class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" type="text" value="+62 83145267602"/>
+        <p class="text-sm text-gray-500 mt-1">
+            Contoh: 812345678
+        </p>
+        <div class="flex items-center bg-blue-100 p-2 rounded-md mt-2">
+            <i class="fab fa-whatsapp text-green-500 text-xl mr-2">
+            </i>
+            <p class="text-sm text-gray-700">
+                Pastikan nomor WhatsApp kamu aktif agar dapat dihubungi perusahaan
+            </p>
+        </div>
+    </div>
+    <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">
+            Email*
+        </label>
+        <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-700">
+                dellsnwn18@gmail.com
+            </span>
+            <a class="text-sm text-blue-500" href="#">
+                Edit email
+            </a>
+        </div>
+    </div>
+    <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">
+            Lokasi
+        </label>
+           <select class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+            <option>
+                Jakarta Selatan, DKI Jakarta
+            </option>
+        </select>
+    </div>
+    <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">
+            Tanggal lahir
+        </label>
+        <div class="flex space-x-2">
+            <select class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                <option>
+                    Day
+                </option>
+            </select>
+            <select class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                <option>
+                    Month
+                </option>
+            </select>
+            <select class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                <option>
+                    Year
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">
+            Jenis kelamin
+        </label>
+        <select class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+            <option>
+                informasi ini tidak ditampilkan untuk umum
+            </option>
+        </select>
+    </div>
+    <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">
+            Pendidikan Terakhir*
+        </label>
+        <select class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+            <option>
+                Diploma (D1 - D4)
+            </option>
+        </select>
+    </div>
+    <div class="flex justify-end space-x-2">
+        <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md" type="button" id="cancelButton">
+            Batal
+        </button>
+        <button class="px-4 py-2 bg-blue-500 text-white rounded-md" type="submit">
+            Simpan
+        </button>
+    </div>
+</form>
+</div>
+</div>
+</div>
+
+<script>
+    // Show the edit form modal
+    document.getElementById('editButton').addEventListener('click', function() {
+        document.getElementById('editModal').classList.remove('hidden');
+    });
+
+  // Hide the edit form modal
+  document.getElementById('closeButton').addEventListener('click', function() {
+      document.getElementById('editModal').classList.add('hidden');
+  });
   
+  document.getElementById('cancelButton').addEventListener('click', function() {
+      document.getElementById('editModal').classList.add('hidden');
+    });
+</script>
+
+
     <!-- Tentang Saya -->
     <div class="mt-12 border-t border-gray-300 pt-4">
-      <h2 class="text-xl font-semibold text-left">TENTANG SAYA</h2>
-      <p class="mt-2 mb-2 text-gray-600 text-center">Beritahu perusahaan apa yang membuatmu unggul untuk dipekerjakan</p>
-      <div class="flex justify-center">
-        <button class="text-blue-600 flex font-semibold items-center">
-            <i class="fas fa-plus-circle mr-2"></i>
-            TAMBAHKAN DESKRIPSI TENTANG SAYA
-        </button>
+        <h2 class="text-xl font-semibold text-left">TENTANG SAYA</h2>
+        <p class="mt-2 mb-2 text-gray-600 text-center">Beritahu perusahaan apa yang membuatmu unggul untuk dipekerjakan</p>
+        <div class="flex justify-center">
+            <button class="text-blue-600 flex font-semibold items-center">
+                <i class="fas fa-plus-circle mr-2"></i>
+                TAMBAHKAN DESKRIPSI TENTANG SAYA
+            </button>
+        </div>
     </div>
-    </div>
-  
+    
     <!-- Pengalaman Kerja -->
     <div class="mt-12 border-t border-gray-300 pt-4">
-      <h2 class="text-xl font-semibold text-left">PENGALAMAN KERJA</h2>
-      <p class="mt-2 mb-2 text-gray-600 text-center">
-        Pastikan bagian ini terisi untuk meningkatkan peluangmu mendapatkan wawancara!
-      </p>
-      <div class="flex justify-center">
-        <button class="text-blue-600 flex font-semibold items-center">
-            <i class="fas fa-plus-circle mr-2"></i>
-            TAMBAHKAN PENGALAMAN KERJA
-        </button>
-    </div>
-    </div>
-  
-    <!-- Pendidikan -->
-    <div class="mt-12 border-t border-gray-300 pt-4">
-      <div class="flex justify-between items-center">
-        <h2 class="text-xl font-semibold">PENDIDIKAN</h2>
-        <a class="text-blue-500 flex font-semibold items-center cursor-pointer" id="add-education-btn">
-          <i class="fas fa-plus-circle mr-2"></i>
-          TAMBAHKAN PENDIDIKAN
-        </a>
-      </div>
-      <div class="mt-4 border-t-2 border-gray-200 pt-4">
-        <div class="flex justify-between items-center mb-2">
-          <div>
-            <h3 class="text-lg font-bold">Telkom University</h3>
-            <p class="text-gray-600">Sistem Informasi</p>
-            <p class="text-gray-600">September 2023 - Sekarang (setahun)</p>
-          </div>
-          <div class="flex space-x-4 text-blue-600">
-            <button class="flex items-center">
-              <i class="fas fa-pen mr-1"></i>
-              EDIT
-            </button>
-            <button class="flex items-center text-red-600">
-              <i class="fas fa-trash mr-1"></i>
-              HAPUS
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Resume -->
-      <div class="mt-12 border-t border-gray-300 pt-4">
-        <h2 class="text-xl font-semibold text-left">RESUME</h2>
+        <h2 class="text-xl font-semibold text-left">PENGALAMAN KERJA</h2>
         <p class="mt-2 mb-2 text-gray-600 text-center">
-            Masukkan Resume/CV yang relevan dengan lowongan pekerjaan yang kamu lamar.
+            Pastikan bagian ini terisi untuk meningkatkan peluangmu mendapatkan wawancara!
         </p>
         <div class="flex justify-center">
-            <button id="addResumeBtn" class="text-blue-600 font-semibold flex items-center">
-                <i class="fas fa-plus-circle text-bold mr-2"></i>
+            <button class="text-blue-600 flex font-semibold items-center">
+                <i class="fas fa-plus-circle mr-2"></i>
+                TAMBAHKAN PENGALAMAN KERJA
+            </button>
+        </div>
+    </div>
+    
+    <!-- Pendidikan -->
+    <div class="mt-12 border-t border-gray-300 pt-4">
+        <div class="flex justify-between items-center">
+            <h2 class="text-xl font-semibold">PENDIDIKAN</h2>
+            <a class="text-blue-500 flex font-semibold items-center cursor-pointer" id="add-education-btn">
+                <i class="fas fa-plus-circle mr-2"></i>
+                TAMBAHKAN PENDIDIKAN
+            </a>
+        </div>
+        <div class="mt-4 border-t-2 border-gray-200 pt-4">
+            <div class="flex justify-between items-center mb-2">
+                <div>
+                    <h3 class="text-lg font-bold">Telkom University</h3>
+                    <p class="text-gray-600">Sistem Informasi</p>
+                    <p class="text-gray-600">September 2023 - Sekarang (setahun)</p>
+                </div>
+                <div class="flex space-x-4 text-blue-600">
+            <button class="flex items-center">
+                <i class="fas fa-pen mr-1"></i>
+                EDIT
+            </button>
+            <button class="flex items-center text-red-600">
+                <i class="fas fa-trash mr-1"></i>
+                HAPUS
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Resume -->
+<div class="mt-12 border-t border-gray-300 pt-4">
+    <h2 class="text-xl font-semibold text-left">RESUME</h2>
+    <p class="mt-2 mb-2 text-gray-600 text-center">
+        Masukkan Resume/CV yang relevan dengan lowongan pekerjaan yang kamu lamar.
+    </p>
+    <div class="flex justify-center">
+        <button id="addResumeBtn" class="text-blue-600 font-semibold flex items-center">
+            <i class="fas fa-plus-circle text-bold mr-2"></i>
                 TAMBAHKAN RESUME
             </button>
         </div>
     </div> 
-
-          <!-- Sertifikat -->
+    
+    <!-- Sertifikat -->
     <div class="mt-12 border-t border-gray-300 pt-4">
         <h2 class="text-xl font-semibold text-left">SERTIFIKAT</h2>
         <p class="mt-2 mb-2 text-gray-600 text-center">
             Beritahu prestasimu dengan menambahkan sertifikat disini.
         </p>
         <div class="flex justify-center">
-          <button class="text-blue-600 font-semibold flex items-center">
-              <i class="fas fa-plus-circle text-bold mr-2"></i>
-              TAMBAHKAN SERTIFIKAT
-          </button>
-      </div>
-      </div>
+            <button class="text-blue-600 font-semibold flex items-center">
+                <i class="fas fa-plus-circle text-bold mr-2"></i>
+                TAMBAHKAN SERTIFIKAT
+            </button>
+        </div>
     </div>
+</div>
 </div>  
+</div>
 
 <!-- Modal Resume -->
 <div id="resumeModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
@@ -251,6 +393,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- Script -->
 <script>
