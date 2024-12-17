@@ -1,165 +1,415 @@
-<!DOCTYPE html>
-<nav lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <title>Chat WhatsApp Style</title>
-</head>
 
-<header class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 shadow-lg">
-    <div class="container mx-auto flex justify-between items-center px-6 py-4">
-        <!-- Logo -->
-        <div class="flex items-center space-x-4">
-            <img src="../asset/img/logo.png" alt="Workify Logo" class="h-10">
-            <div>
-                <h1 class="text-2xl font-extrabold text-white tracking-tight">WORKIFY</h1>
-                <p class="text-sm text-blue-200">Find Your Dream Job</p>
-            </div>
-        </div>
-
-        <!-- Navigation Menu -->
-        <nav class="hidden md:flex items-center space-x-6">
-            <a href="beranda.html" class="text-white font-medium hover:text-yellow-300 transition">Cari Lowongan</a>
-            <a href="template.html" class="text-white font-medium hover:text-yellow-300 transition">Template CV</a>
-            <a href="zoom.html" class="text-white font-medium hover:text-yellow-300 transition">Zoom</a>
-
-            <!-- Action Buttons -->
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Workify
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-100">
+    <header class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-6 py-4">
+            <!-- Logo -->
             <div class="flex items-center space-x-4">
-                <!-- Notification Icon -->
-                <a href="notif.html" class="hover:scale-110 transition">
-                    <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            d="M12 5.365V3m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175 0 .593 0 1.193-.538 1.193H5.538c-.538 0-.538-.6-.538-1.193 0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 12 5.365Z" />
-                    </svg>
-                </a>
-                <!-- Chat Icon -->
-                <a href="chat.html" class="hover:scale-110 transition">
-                    <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            d="M9 17h6l3 3v-3h2V9h-2M4 4h11v8H9l-3 3v-3H4V4Z" />
-                    </svg>
-                </a>
-                <!-- Settings Icon -->
-                <a href="pengaturan.html" class="hover:scale-110 transition">
-                    <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            d="M21 13v-2a1 1 0 0 0-1-1h-.757l-.707-1.707.535-.536a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0l-.536.535L14 4.757V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v.757l-1.707.707-.536-.535a1 1 0 0 0-1.414 0L4.929 6.343a1 1 0 0 0 0 1.414l.536.536L4.757 10H4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h.757l.707 1.707-.535.536a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l.536-.535 1.707.707V20a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.757l1.707-.708.536.536a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-.535-.536.707-1.707H20a1 1 0 0 0 1-1Z" />
-                        <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                    </svg>
-                </a>
-            </div>
-            <!-- User Profile -->
-            <div class="flex items-center">
-                <a href="lihatprofil.html">
-                    <img src="../asset/img/lisa.jpg" alt="Profile" class="w-10 h-10 rounded-full border-2 border-white">
-                </a>
-            </div>
-        </nav>
-
-        <!-- Hamburger Menu -->
-        <button id="menu-toggle" class="md:hidden flex items-center text-white focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-        </button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden bg-blue-500 text-white flex flex-col px-6 py-4 space-y-4">
-        <a href="beranda.html" class="font-medium hover:text-yellow-300">Cari Lowongan</a>
-        <a href="template.html" class="font-medium hover:text-yellow-300">Template CV</a>
-        <a href="zoom.html" class="font-medium hover:text-yellow-300">Zoom</a>
-    </div>
-</header>
-
-
-<body class="bg-gray-100 h-screen overflow-hidden">
-    <div class="flex h-full">
-        <!-- Sidebar -->
-        <div class="w-1/3 bg-white border-r border-gray-300">
-            <header class="flex items-center justify-between px-4 py-3 bg-blue-600 text-white">
-                <h1 class="text-lg font-bold">Chats</h1>
-                <button class="text-white hover:bg-blue-700 rounded-full p-2">
-                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18M3 18h18"/>
-                    </svg>
-                </button>
-            </header>
-            <div class="p-4">
-                <!-- Search bar -->
-                <div class="relative">
-                    <input type="text" placeholder="Cari kontak..." class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-400 focus:outline-none">
-                    <span class="absolute top-2 right-3 text-gray-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M15 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0z"/>
-                        </svg>
-                    </span>
+                <img src="../asset/img/logo.png" alt="Workify Logo" class="h-10">
+                <div>
+                    <h1 class="text-2xl font-extrabold text-white tracking-tight">WORKIFY</h1>
+                    <p class="text-sm text-blue-200">Find Your Dream Job</p>
                 </div>
-                <!-- Contact list -->
-                <ul class="mt-2 space-y-2">
-                    <li class="flex items-center p-3 hover:bg-gray-100 rounded-lg cursor-pointer">
-                        <img src="../asset/img/nicholas.webp" alt="User" class="w-10 h-10 rounded-full mr-3">
-                        <div class="flex-1">
-                            <h2 class="font-semibold text-gray-800">Nicholas Saputra</h2>
-                            <p class="text-sm text-gray-500 truncate">Hi, apa kabar?</p>
-                        </div>
-                        <span class="text-xs text-gray-400">Kemarin, 22:15</span>
-                    </li>
-                    <li class="flex items-center p-3 hover:bg-gray-100 rounded-lg cursor-pointer">
-                        <img src="../asset/img/lisa.jpg" alt="User" class="w-10 h-10 rounded-full mr-3">
-                        <div class="flex-1">
-                            <h2 class="font-semibold text-gray-800">Lalisa Manoban</h2>
-                            <p class="text-sm text-gray-500 truncate">Selamat anda di...</p>
-                        </div>
-                        <span class="text-xs text-gray-400">Hari ini</span>
-                    </li>
-                </ul>
             </div>
+    
+            <!-- Navigation Menu -->
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="beranda.html" class="text-white font-medium hover:text-yellow-300 transition">Cari Lowongan</a>
+                <a href="template.html" class="text-white font-medium hover:text-yellow-300 transition">Template CV</a>
+                
+    
+                <!-- Action Buttons -->
+                <div class="flex items-center space-x-4">
+                    <!-- Notification Icon -->
+                    <a href="notif.html" class="hover:scale-110 transition">
+                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 5.365V3m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175 0 .593 0 1.193-.538 1.193H5.538c-.538 0-.538-.6-.538-1.193 0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 12 5.365Z" />
+                        </svg>
+                    </a>
+                    <!-- Chat Icon -->
+                    <a href="chat.html" class="hover:scale-110 transition">
+                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 17h6l3 3v-3h2V9h-2M4 4h11v8H9l-3 3v-3H4V4Z" />
+                        </svg>
+                    </a>
+                    
+                <!-- User Profile -->
+                <div class="flex items-center">
+                    <a href="lihatprofil.html">
+                        <img src="../asset/img/lisa.jpg" alt="Profile" class="w-10 h-10 rounded-full border-2 border-white">
+                    </a>
+                </div>
+            </nav>
+    
+            <!-- Hamburger Menu -->
+            <button id="menu-toggle" class="md:hidden flex items-center text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
         </div>
-
-<!-- Chat area -->
-<div class="w-full sm:w-2/3 flex flex-col bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300 rounded-lg shadow-lg overflow-hidden">
-    <!-- Chat header -->
-    <header class="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white">
-        <div class="flex items-center">
-            <img src="../asset/img/nicholas.webp" alt="User" class="w-12 h-12 rounded-full mr-4 shadow-md">
-            <div>
-                <h2 class="font-semibold text-xl">Nicholas Saputra</h2>
-                <p class="text-sm text-blue-200">Online</p>
-            </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-blue-500 text-white flex flex-col px-6 py-4 space-y-4">
+            <a href="beranda.html" class="font-medium hover:text-yellow-300">Cari Lowongan</a>
+            <a href="template.html" class="font-medium hover:text-yellow-300">Template CV</a>
+            <a href="zoom.html" class="font-medium hover:text-yellow-300">Zoom</a>
         </div>
-        <button class="text-white hover:bg-blue-700 rounded-full p-2 transition duration-200">
-            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-        </button>
     </header>
 
-    <!-- Chat messages -->
-    <div id="chat-box" class="flex-1 overflow-y-auto p-4 bg-gray-50 space-y-4">
-        <!-- Example Messages -->
-        <div class="flex">
-            <div class="max-w-xs bg-blue-100 text-gray-800 p-3 rounded-lg shadow-md">
-                <p>Hi! Apa kabar?</p>
-            </div>
-        </div>
-        <div class="flex justify-end">
-            <div class="max-w-xs bg-green-100 text-gray-800 p-3 rounded-lg shadow-md">
-                <p>Baik! Kamu sendiri?</p>
-            </div>
-        </div>
+    
+  <div class="flex h-screen">
+   <!-- Sidebar -->
+   <div class="w-1/4 bg-white border-r border-gray-200">
+    <div class="flex items-center justify-between p-4 border-b border-gray-200">
+     <h1 class="text-xl font-semibold">
+      Workify
+     </h1>
+     <div class="flex items-center space-x-4">
+      <i class="fas fa-search text-gray-500">
+      </i>
+      <i class="fas fa-ellipsis-v text-gray-500">
+      </i>
+     </div>
     </div>
+    <div class="p-4">
+     <input class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Search or start a new chat" type="text"/>
+    </div>
+    <div class="overflow-y-auto h-full">
+     <div class="flex items-center p-4 hover:bg-gray-100 cursor-pointer">
+      <img alt="Profile picture of Tubes Statistika" class="w-12 h-12 rounded-full" height="50" src="https://storage.googleapis.com/a1aa/image/AtBXBCKDBMZnANUqA9S1WJpMMqUvt5BoeTCRdISwVXFsg69JA.jpg" width="50"/>
+      <div class="ml-4">
+       <div class="flex justify-between">
+        <h2 class="font-semibold">
+         addda
+        </h2>
+        <span class="text-sm text-gray-500">
+            9:51 PM
+        </span>
+       </div>
+       <p class="text-sm text-gray-500">
+        saasa
+       </p>
+      </div>
+     </div>
+     <div class="flex items-center p-4 bg-gray-200 cursor-pointer">
+      <img alt="Profile picture of Kelompok UID" class="w-12 h-12 rounded-full" height="50" src="https://storage.googleapis.com/a1aa/image/9HEwwJNveGUfS0Or7ymCeOtbR2QRo4Oh8QM1swBNkTDlCq3nA.jpg" width="50"/>
+      <div class="ml-4">
+       <div class="flex justify-between">
+        <h2 class="font-semibold">
+         asaa
+        </h2>
+        <span class="text-sm text-gray-500">
+         9:51 PM
+        </span>
+       </div>
+       <p class="text-sm text-gray-500">
+       asasa
+       </p>
+      </div>
+     </div>
+     <div class="flex items-center p-4 hover:bg-gray-100 cursor-pointer">
+      <img alt="Profile picture of GRUP HARDPUSH EX 50-100" class="w-12 h-12 rounded-full" height="50" src="https://storage.googleapis.com/a1aa/image/GCBsaJecVwVdRKBjNldaYucka4oob4EbWpfPTWI4Op8WB17TA.jpg" width="50"/>
+      <div class="ml-4">
+       <div class="flex justify-between">
+        <h2 class="font-semibold">
+         asasa
+        </h2>
+        <span class="text-sm text-gray-500">
+            7:51 PM
+        </span>
+       </div>
+       <p class="text-sm text-gray-500">
+        sassasa
+       </p>
+      </div>
+     </div>
+     <div class="flex items-center p-4 hover:bg-gray-100 cursor-pointer">
+      <img alt="Profile picture of tetsu. anak ml" class="w-12 h-12 rounded-full" height="50" src="https://storage.googleapis.com/a1aa/image/95KVfLQEIzw1aqX7gWuqAmf6X7aO7vmNDb4qcWVCloUQB17TA.jpg" width="50"/>
+      <div class="ml-4">
+       <div class="flex justify-between">
+        <h2 class="font-semibold">
+         asa
+        </h2>
+        <span class="text-sm text-gray-500">
+            7:57 PM
+        </span>
+       </div>
+       <p class="text-sm text-gray-500">
+        saa
+       </p>
+      </div>
+     </div>
+     <div class="flex items-center p-4 hover:bg-gray-100 cursor-pointer">
+      <img alt="Profile picture of bokap" class="w-12 h-12 rounded-full" height="50" src="https://storage.googleapis.com/a1aa/image/1ZTuIndVesQXWS6D2hY6N44nR7Maex386UwPkUdAugKUB17TA.jpg" width="50"/>
+      <div class="ml-4">
+       <div class="flex justify-between">
+        <h2 class="font-semibold">
+       asa
+        </h2>
+        <span class="text-sm text-gray-500">
+         7:51 PM
+        </span>
+       </div>
+       <p class="text-sm text-gray-500">
+        asasasa
+       </p>
+      </div>
+     </div>
+     <div class="flex items-center p-4 hover:bg-gray-100 cursor-pointer">
+      <img alt="Profile picture of a kantin kosan" class="w-12 h-12 rounded-full" height="50" src="https://storage.googleapis.com/a1aa/image/oIswPAg4gXLZKNZ5fjXssAuz03ivpsgA2lTXGWVKy7npg69JA.jpg" width="50"/>
+      <div class="ml-4">
+       <div class="flex justify-between">
+        <h2 class="font-semibold">
+         sassasa
+        </h2>
+        <span class="text-sm text-gray-500">
+         7:19 PM
+        </span>
+       </div>
+       <p class="text-sm text-gray-500">
+        Image
+       </p>
+      </div>
+     </div>
+     <div class="flex items-center p-4 hover:bg-gray-100 cursor-pointer">
+      <img alt="Profile picture of geri" class="w-12 h-12 rounded-full" height="50" src="https://storage.googleapis.com/a1aa/image/D75x2V03ZLrtEt7vjRf14xHqhOrNv34jpulbpbyNFeZVB17TA.jpg" width="50"/>
+      <div class="ml-4">
+       <div class="flex justify-between">
+        <h2 class="font-semibold">
+            sasasa
+        </h2>
+        <span class="text-sm text-gray-500">
+         6:16 PM
+        </span>
+       </div>
+       <p class="text-sm text-gray-500">
+        login
+       </p>
+      </div>
+     </div>
+     <div class="flex items-center p-4 hover:bg-gray-100 cursor-pointer">
+      <img alt="Profile picture of Sisfo 04 || Sinergi Bangun Swa..." class="w-12 h-12 rounded-full" height="50" src="https://storage.googleapis.com/a1aa/image/6onJZhSaOdoeYKexnasalU8ifSRBF0DsllrUO1w9gGh0Cq3nA.jpg" width="50"/>
+      <div class="ml-4">
+       <div class="flex justify-between">
+        <h2 class="font-semibold">
+         Sisfo 04 || Sinergi Bangun Swa...
+        </h2>
+        <span class="text-sm text-gray-500">
+         4:13 PM
+        </span>
+       </div>
+       <p class="text-sm text-gray-500">
+        ~Naey: knqsbwdufbwxnfvbsccvwe8gci...
+       </p>
+      </div>
+     </div>
+     <div class="flex items-center p-4 hover:bg-gray-100 cursor-pointer">
+      <img alt="Profile picture of BASIS DATA 2_47-04" class="w-12 h-12 rounded-full" height="50" src="https://storage.googleapis.com/a1aa/image/e4EFWsOUR11meEHOoKMJbGQ1R4QOYrVo10ej5ueqRZCnFUvPB.jpg" width="50"/>
+      <div class="ml-4">
+       <div class="flex justify-between">
+        <h2 class="font-semibold">
+         sasasas
+        </h2>
+        <span class="text-sm text-gray-500">
+         7:17 AM
+        </span>
+       </div>
+       <p class="text-sm text-gray-500">
+        hadid:aku disini
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- Chat Area -->
+   <div class="flex-1 flex flex-col">
+    <div class="flex items-center justify-between p-4 border-b border-gray-200">
+     <div class="flex items-center">
+      <img alt="Profile picture of Kelompok UID" class="w-12 h-12 rounded-full" height="50" src="https://storage.googleapis.com/a1aa/image/9HEwwJNveGUfS0Or7ymCeOtbR2QRo4Oh8QM1swBNkTDlCq3nA.jpg" width="50"/>
+      <div class="ml-4">
+       <h2 class="font-semibold">
+        Kelompok UID
+       </h2>
+       <p class="text-sm text-gray-500">
+        ~Ilyas, ~sabil, You
+       </p>
+      </div>
+     </div>
+     <div class="flex items-center space-x-4">
+      <i class="fas fa-video text-gray-500">
+      </i>
+      <i class="fas fa-phone text-gray-500">
+      </i>
+      <i class="fas fa-ellipsis-v text-gray-500">
+      </i>
+     </div>
+    </div>
+    <div class="flex-1 p-4 bg-gray-50" style="background-image: url('//asset/img/background.png'); background-repeat: no-repeat; background-size: cover;">
+     <div class="space-y-4">
+      <div class="flex justify-end">
+       <div class="bg-green-100 p-2 rounded-lg max-w-xs">
+        <p class="text-sm">
+         woke
+        </p>
+        <span class="text-xs text-gray-500">
+         9:37 PM
+        </span>
+       </div>
+      </div>
+      <div class="flex justify-end">
+       <div class="bg-green-100 p-2 rounded-lg max-w-xs">
+        <p class="text-sm">
+         -
+        <span class="text-xs text-gray-500">
+         9:43 PM
+        </span>
+       </div>
+      </div>
+      <div class="flex">
+       <div class="bg-white p-2 rounded-lg max-w-xs">
+        <p class="text-sm text-green-500">
+         ~Ilyas
+        </p>
+        <p class="text-sm">
+         Discord - Group Chat That's All...
+        </p>
+        <p class="text-sm text-gray-500">
+         Discord is great for playing games and chilling with friends, or even building...
+        </p>
+        <a class="text-blue-500" href="#">
+         https://discord.gg/DZhZFEc2
+        </a>
+        <span class="text-xs text-gray-500">
+         9:44 PM
+        </span>
+       </div>
+      </div>
+      <div class="flex">
+       <div class="bg-white p-2 rounded-lg max-w-xs">
+        <p class="text-sm text-green-500">
+         ~Ilyas
+        </p>
+        <p class="text-sm">
+         Join the Domroom Discord...
+        </p>
+        <p class="text-sm text-gray-500">
+         Check out the Domroom community on Discord - hang out with 14 other...
+        </p>
+        <a class="text-blue-500" href="#">
+         https://discord.gg/hWCJKrhP
+        </a>
+        <span class="text-xs text-gray-500">
+         9:46 PM
+        </span>
+       </div>
+      </div>
+      <div class="flex">
+       <div class="bg-white p-2 rounded-lg max-w-xs">
+        <p class="text-sm text-green-500">
+         ~Ilyas
+        </p>
+        <a class="text-blue-500" href="#">
+         https://discord.gg/hWCJKrhP
+        </a>
+        <span class="text-xs text-gray-500">
+         9:46 PM
+        </span>
+       </div>
+      </div>
+      <div class="flex justify-end">
+       <div class="bg-green-100 p-2 rounded-lg max-w-xs">
+        <p class="text-sm">
+         yg ini
+        </p>
+        <span class="text-xs text-gray-500">
+         9:46 PM
+        </span>
+       </div>
+      </div>
+      <div class="flex justify-end">
+       <div class="bg-green-100 p-2 rounded-lg max-w-xs">
+        <p class="text-sm">
+         ada gk
+        </p>
+        <span class="text-xs text-gray-500">
+         9:47 PM
+        </span>
+       </div>
+      </div>
+      <div class="flex justify-end">
+       <div class="bg-green-100 p-2 rounded-lg max-w-xs">
+        <p class="text-sm">
+         suara gua
+        </p>
+        <span class="text-xs text-gray-500">
+         9:47 PM
+        </span>
+       </div>
+      </div>
+      <div class="flex justify-end">
+       <div class="bg-green-100 p-2 rounded-lg max-w-xs">
+        <p class="text-sm">
+         lanjut aja
+        </p>
+        <span class="text-xs text-gray-500">
+         9:51 PM
+        </span>
+       </div>
+      </div>
+      <div class="flex justify-end">
+       <div class="bg-green-100 p-2 rounded-lg max-w-xs">
+        <p class="text-sm">
+         ya omongin aja
+        </p>
+        <span class="text-xs text-gray-500">
+         9:51 PM
+        </span>
+       </div>
+      </div>
+      <div class="flex">
+       <div class="bg-white p-2 rounded-lg max-w-xs">
+        <p class="text-sm text-green-500">
+         ~Ilyas
+        </p>
+        <p class="text-sm">
+         hah
+        </p>
+        <span class="text-xs text-gray-500">
+         9:51 PM
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="p-4 border-t border-gray-200">
+     <div class="flex items-center space-x-4">
+      <i class="fas fa-smile text-gray-500">
+      </i>
+      <input class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Type a message" type="text"/>
+      <i class="fas fa-microphone text-gray-500">
+      </i>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
 
 
-    <!-- Footer Section -->
-    <footer class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 text-white py-6 mt-auto">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 WORKIFY. All Rights Reserved.</p>
-        </div>
-    </footer>
-
+  
         <!-- Script Menu Humburger -->
         <script>
             const menuToggle = document.getElementById('menu-toggle');
@@ -169,7 +419,6 @@
                 mobileMenu.classList.toggle('hidden');
             });
         </script>
-
 
 <script src="http://127.0.0.1:5500//socket.io/socket.io.js"></script>
 <script>
@@ -202,6 +451,7 @@
         }
     });
 </script>
+
 
 </body>
 </html>
