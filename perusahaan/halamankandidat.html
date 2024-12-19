@@ -4,118 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <title>Rekomendasi Kandidat</title>
+    <title>Rekomendasi Kandidat - Workify</title>
 </head>
 <body class="min-h-screen flex flex-col">
-    
-    <header class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 shadow-lg sticky top-0 z-50">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-500 shadow-lg sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center px-6 py-4">
-            <!-- Logo -->
-            <div class="flex items-left space-x-4">
+            <div class="flex items-center space-x-4">
                 <img src="../asset/img/logo.png" alt="Workify Logo" class="h-10">
                 <div>
-                    <h1 class="text-2xl font-extrabold text-white tracking-tight">WORKIFY</h1>
+                    <h1 class="text-2xl font-extrabold text-white">WORKIFY</h1>
                     <p class="text-sm text-blue-200">Find Your Dream Job</p>
                 </div>
             </div>
-    
-            <!-- Navigation Menu -->
+
             <nav class="hidden md:flex items-center space-x-6">
-                <a href="beranda.html" class="text-yellow-300 font-medium hover:text-yellow-300 transition">Beranda</a>
-                <a href="template.html" class="text-white font-medium hover:text-yellow-300 transition">Lowongan</a>
-    
-                <!-- Action Buttons -->
+                <a href="beranda.html" class="text-yellow-300 font-medium hover:text-yellow-400 transition">Beranda</a>
+                <a href="lowonganpekerjaan.html" class="text-white font-medium hover:text-yellow-400 transition">Lowongan</a>
                 <div class="flex items-center space-x-4">
-                    <!-- Notification Icon -->
                     <a href="notif.html" class="hover:scale-110 transition">
                         <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 5.365V3m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175 0 .593 0 1.193-.538 1.193H5.538c-.538 0-.538-.6-.538-1.193 0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 12 5.365Z" />
+                            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 5.365V3m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175 0 .593 0 1.193-.538 1.193H5.538c-.538 0-.538-.6-.538-1.193 0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 12 5.365Z" />
                         </svg>
                     </a>
-                    <!-- Chat Icon -->
                     <a href="chat.html" class="hover:scale-110 transition">
                         <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                d="M9 17h6l3 3v-3h2V9h-2M4 4h11v8H9l-3 3v-3H4V4Z" />
+                            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 17h6l3 3v-3h2V9h-2M4 4h11v8H9l-3 3v-3H4V4Z" />
                         </svg>
                     </a>
-    
                     <div class="relative">
-                        <!-- Profile Button with Elongated Border -->
-                        <button id="profile-toggle" class="flex items-center space-x-3 focus:outline-none px-4 py-2 rounded-full border-2 border-blue-600">
-                            <!-- Avatar -->
+                        <button id="profile-toggle" class="flex items-center space-x-3 px-4 py-2 rounded-full border-2 border-blue-600">
                             <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center shadow-md">
                                 <img src="../asset/img/lisa.jpg" alt="Profile" class="w-10 h-10 rounded-full border-2 border-white">
                             </div>
-                            <!-- Username and Icon -->
                             <span class="text-lg font-semibold text-white flex items-center space-x-1">
                                 <span>DELL</span>
-                                <!-- Small Icon next to the username -->
                                 <svg id="dropdown-icon" class="w-4 h-4 text-white transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12l7-7 7 7" />
                                 </svg>
                             </span>
                         </button>
-                    
-                        <!-- Dropdown Menu -->
-                        <div id="profile-dropdown" class="hidden absolute right-0 mt-3 w-56 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 transition-all duration-200">
+                        <div id="profile-dropdown" class="hidden absolute right-0 mt-3 w-56 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                             <div class="flex flex-col">
                                 <a href="profilsaya.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gradient-to-r from-blue-500 to-blue-400 hover:text-white transition">
-                                    <i class="fas fa-user mr-3 text-blue-500 group-hover:text-white"></i> Profil Saya
+                                    Profil Saya
                                 </a>
                                 <a href="logout.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-red-500 hover:text-white transition">
-                                    <i class="fas fa-power-off mr-3 text-red-500 group-hover:text-white"></i> Keluar
+                                    Keluar
                                 </a>
                             </div>
                         </div>
-                    </div>  
-            </nav>
-    </header>
-    
-    <!-- JavaScript to Toggle the Dropdown -->
-    <script>
-    // Toggle the Profile Dropdown
-    document.getElementById('profile-toggle').addEventListener('click', function (event) {
-        const dropdown = document.getElementById('profile-dropdown');
-        dropdown.classList.toggle('hidden');
-        
-        // Stop the event from propagating to the document level
-        event.stopPropagation();
-    });
-    
-    // Get the dropdown icon element
-    const icon = document.getElementById('dropdown-icon');
-    
-    // Toggle icon rotation on click
-    icon.addEventListener('click', function () {
-        icon.classList.toggle('rotate-180'); // This will rotate the icon by 180 degrees
-    });
-    </script>
-
-    <!-- Main Content -->
-    <div class="flex-grow flex">
-
-        <!-- Main Content -->
-        <div class="w-3/4 ml-5">
-            <h1 class="text-2xl font-bold mb-5">Rekomendasi Kandidat</h1>
-            <!-- Daftar Kandidat -->
-            <div class="space-y-4">
-                <!-- Kandidat Card -->
-                <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-between">
-                    <div class="flex items-center">
-                        <img src="https://via.placeholder.com/50" alt="Kandidat" class="rounded-full mr-4">
-                        <div>
-                            <h2 class="font-semibold">Kang Haerin</h2>
-                            <p>📍 Surabaya</p>
-                            <p>🛠️ UI/UX Designer</p>
-                        </div>
                     </div>
-                    <button class="bg-blue-500 text-white px-4 py-1 rounded">Pilih</button>
                 </div>
-            </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <div class="relative bg-gradient-to-br from-blue-500 via-blue-400 to-cyan-500 text-white py-10 rounded-lg shadow-lg mb-8 overflow-hidden">
+        <div class="absolute top-0 left-0 w-40 h-40 bg-blue-700 opacity-30 rounded-full transform -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+        <div class="absolute bottom-0 right-0 w-40 h-40 bg-blue-300 opacity-20 rounded-full transform translate-x-1/2 translate-y-1/2"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="text-4xl font-extrabold mb-3">🎉 Kandidat Terbaik untuk Anda! 🎉</h2>
+            <p class="text-lg text-blue-100 font-medium">Cari profesional berbakat untuk kebutuhan pekerjaan Anda bersama Workify.</p>
         </div>
     </div>
+
+    <!-- Content Section -->
+    <main class="flex-grow container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                <div class="flex items-center space-x-4 mb-4">
+                    <img src="https://via.placeholder.com/50" alt="Kandidat" class="rounded-full">
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-700">Kang Haerin</h2>
+                        <p class="text-gray-500">📍 Surabaya</p>
+                        <p class="text-gray-500">🛠️ UI/UX Designer</p>
+                    </div>
+                </div>
+                <button class="block w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">Pilih</button>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                <div class="flex items-center space-x-4 mb-4">
+                    <img src="https://via.placeholder.com/50" alt="Kandidat" class="rounded-full">
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-700">Siti Aisyah</h2>
+                        <p class="text-gray-500">📍 Jakarta</p>
+                        <p class="text-gray-500">🛠️ Frontend Developer</p>
+                    </div>
+                </div>
+                <button class="block w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">Pilih</button>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                <div class="flex items-center space-x-4 mb-4">
+                    <img src="https://via.placeholder.com/50" alt="Kandidat" class="rounded-full">
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-700">Budi Santoso</h2>
+                        <p class="text-gray-500">📍 Bandung</p>
+                        <p class="text-gray-500">🛠️ Backend Developer</p>
+                    </div>
+                </div>
+                <button class="block w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">Pilih</button>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                <div class="flex items-center space-x-4 mb-4">
+                    <img src="https://via.placeholder.com/50" alt="Kandidat" class="rounded-full">
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-700">Kang Haerin</h2>
+                        <p class="text-gray-500">📍 Surabaya</p>
+                        <p class="text-gray-500">🛠️ UI/UX Designer</p>
+                    </div>
+                </div>
+                <button class="block w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">Pilih</button>
+            </div>
+        </div>
+    </main>
+
 
     <!-- Footer -->
     <footer class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 text-white py-6">
@@ -123,5 +128,19 @@
             <p>&copy; 2024 WORKIFY. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('profile-toggle').addEventListener('click', function (event) {
+            const dropdown = document.getElementById('profile-dropdown');
+            dropdown.classList.toggle('hidden');
+            event.stopPropagation();
+        });
+
+        const icon = document.getElementById('dropdown-icon');
+        icon.addEventListener('click', function () {
+            icon.classList.toggle('rotate-180');
+        });
+    </script>
 </body>
 </html>
