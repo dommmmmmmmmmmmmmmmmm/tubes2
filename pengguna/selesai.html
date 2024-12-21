@@ -22,30 +22,32 @@
                     <p class="text-sm text-blue-200">Find Your Dream Job</p>
                 </div>
             </div>
-    
+
             <!-- Navigation Menu -->
             <nav class="hidden md:flex items-center space-x-6">
                 <a href="beranda.html" class="text-yellow-300 font-medium hover:text-yellow-300 transition">Cari
                     Lowongan</a>
                 <a href="template.html" class="text-white font-medium hover:text-yellow-300 transition">Template CV</a>
-    
+
                 <!-- Action Buttons -->
                 <div class="flex items-center space-x-4">
                     <!-- Notification Icon -->
                     <a href="notif.html" class="hover:scale-110 transition">
-                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
                             <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 5.365V3m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175 0 .593 0 1.193-.538 1.193H5.538c-.538 0-.538-.6-.538-1.193 0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 12 5.365Z" />
                         </svg>
                     </a>
                     <!-- Chat Icon -->
                     <a href="chat.html" class="hover:scale-110 transition">
-                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
                             <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                 d="M9 17h6l3 3v-3h2V9h-2M4 4h11v8H9l-3 3v-3H4V4Z" />
                         </svg>
                     </a>
-    
+
                     <div class="relative">
                         <!-- Profile Button with Elongated Border -->
                         <button id="profile-toggle"
@@ -69,7 +71,7 @@
                                 </svg>
                             </span>
                         </button>
-    
+
                         <!-- Dropdown Menu -->
                         <div id="profile-dropdown"
                             class="hidden absolute right-0 mt-3 w-56 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 transition-all duration-200">
@@ -80,7 +82,8 @@
                                 </a>
                                 <a href="lamaransaya.html"
                                     class="flex items-center px-4 py-3 text-gray-700 hover:bg-gradient-to-r from-blue-500 to-blue-400 hover:text-white transition">
-                                    <i class="fas fa-file-alt mr-3 text-blue-500 group-hover:text-white"></i> Lamaran Saya
+                                    <i class="fas fa-file-alt mr-3 text-blue-500 group-hover:text-white"></i> Lamaran
+                                    Saya
                                 </a>
                                 <a href="logout.html"
                                     class="flex items-center px-4 py-3 text-gray-700 hover:bg-red-500 hover:text-white transition">
@@ -91,83 +94,79 @@
                     </div>
             </nav>
     </header>
-    
+
     <!-- JavaScript to Toggle the Dropdown -->
     <script>
         // Toggle the Profile Dropdown
         document.getElementById('profile-toggle').addEventListener('click', function (event) {
             const dropdown = document.getElementById('profile-dropdown');
             dropdown.classList.toggle('hidden');
-    
+
             // Stop the event from propagating to the document level
             event.stopPropagation();
         });
-    
+
         // Get the dropdown icon element
         const icon = document.getElementById('dropdown-icon');
-    
+
         // Toggle icon rotation on click
         icon.addEventListener('click', function () {
             icon.classList.toggle('rotate-180'); // This will rotate the icon by 180 degrees
         });
     </script>
-    <main class="container mx-auto mt-10">
+    <!-- Main Content -->
+    <main class="container mx-auto mt-10 max-w-4xl bg-white p-8 rounded-lg shadow-lg relative">
+        <!-- Kembali ke Lamaran Link -->
+        <div class="absolute top-4 left-4">
+            <a href="lamaransaya.html" class="text-blue-500 text-sm inline-block">
+                ← Lihat lamaran anda
+            </a>
+        </div>
+
+        <!-- Header -->
         <div class="text-center">
-            <img alt="Gojek Logo" class="mx-auto" height="100"
-                src="https://storage.googleapis.com/a1aa/image/oR1pwXdf43V3ca8doiWuG87bxlgc1qe3SE8tj3cXkEMpZI9TA.jpg"
-                width="100" />
+            <img src="../asset/img/kredivo.jpg" alt="Gojek Logo" class="mx-auto" width="100" height="100" />
             <h1 class="text-2xl font-semibold mt-4 text-gray-800">
                 Melamar untuk
             </h1>
             <h2 class="text-xl font-semibold text-gray-800">
-                Staff Adminstrasi
+                Field Collector
             </h2>
             <p class="text-gray-600">
-                PT GO-JEK Indonesia
+                Kredivo Group
             </p>
         </div>
-        <div class="flex justify-center mt-6 items-center">
+
+        <!-- Progress Bar -->
+        <div class="flex justify-center mt-8 items-center">
             <div class="text-center relative">
-                <div class="w-8 h-8 bg-blue-500 rounded-full inline-block">
-                </div>
-                <p class="mt-2 text-gray-400">
-                    Mengisi Data
-                </p>
+                <div class="w-8 h-8 bg-blue-500 rounded-full inline-block"></div>
+                <p class="mt-2 text-gray-800">Mengisi Data</p>
             </div>
-            <div class="flex-grow border-t-2 border-blue-200 mx-2">
-            </div>
+            <div class="flex-grow border-t-2 border-blue-200 mx-2"></div>
             <div class="text-center relative">
-                <div class="w-8 h-8 bg-blue-500 rounded-full inline-block">
-                </div>
-                <p class="mt-2 text-gray-400">
-                    Mengunggah CV dan Portofolio
-                </p>
+                <div class="w-8 h-8 bg-blue-500 rounded-full inline-block"></div>
+                <p class="mt-2 text-gray-800">Mengunggah CV dan Portofolio</p>
             </div>
-            <div class="flex-grow border-t-2 border-blue-200 mx-2">
-            </div>
+            <div class="flex-grow border-t-2 border-blue-200 mx-2"></div>
             <div class="text-center relative">
-                <div class="w-8 h-8 bg-blue-500 rounded-full inline-block">
-                </div>
-                <p class="mt-2 text-gray-800">
-                    Terkirim
-                </p>
+                <div class="w-8 h-8 bg-blue-500 rounded-full inline-block"></div>
+                <p class="mt-2 text-gray-800">Terkirim</p>
             </div>
         </div>
+
+        <!-- Confirmation Message -->
         <div class="mt-16 text-center">
             <div class="border border-gray-300 p-8 rounded-lg inline-block">
-                <h2 class="text-2xl font-bold">
-                    Terima kasih
-                </h2>
+                <h2 class="text-2xl font-bold">Terima kasih</h2>
                 <div class="mt-4">
-                    <i class="fas fa-check-circle text-4xl text-blue-700">
-                    </i>
+                    <i class="fas fa-check-circle text-4xl text-blue-700"></i>
                 </div>
-                <p class="mt-4 text-gray-600">
-                    Semoga di terima di tempat kerja yang anda inginkan
-                </p>
+                <p class="mt-4 text-gray-600">Semoga diterima di tempat kerja yang Anda inginkan</p>
             </div>
         </div>
     </main>
+
     <footer class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 text-white py-4 mt-10">
         <div class="container mx-auto text-center">
             <p class="text-white">© 2024 Workify. All rights reserved.</p>
