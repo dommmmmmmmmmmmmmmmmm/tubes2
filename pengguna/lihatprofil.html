@@ -135,27 +135,19 @@
         <div class="mt-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                    <p><strong>WHATSAPP NUMBER</strong></p>
+                    <p><strong>Nama Lengkap</strong></p>
                     <p>-</p>
                 </div>
                 <div>
-                    <p><strong>EMAIL</strong></p>
+                    <p><strong>Email</strong></p>
                     <p>-</p>
                 </div>
                 <div>
-                    <p><strong>LOKASI</strong></p>
+                    <p><strong>Usia</strong></p>
                     <p>-</p>
                 </div>
                 <div>
-                    <p><strong>USIA, JENIS KELAMIN</strong></p>
-                    <p>-</p>
-                </div>
-                <div>
-                    <p><strong>PENDIDIKAN TERAKHIR</strong></p>
-                    <p>-</p>
-                </div>
-                <div>
-                    <p><strong>PENGALAMAN KERJA</strong></p>
+                    <p><strong>Lokasi</strong></p>
                     <p>-</p>
                 </div>
             </div>
@@ -314,7 +306,7 @@
             <p class="mt-2 mb-2 text-gray-600 text-center">Beritahu perusahaan apa yang membuatmu unggul untuk
                 dipekerjakan</p>
             <div class="flex justify-center">
-                <button class="text-blue-600 flex font-semibold items-center">
+                <button id="addAboutMeBtn" class="text-blue-600 flex font-semibold items-center">
                     <i class="fas fa-plus-circle mr-2"></i>
                     TAMBAHKAN DESKRIPSI TENTANG SAYA
                 </button>
@@ -328,12 +320,50 @@
                 Pastikan bagian ini terisi untuk meningkatkan peluangmu mendapatkan wawancara!
             </p>
             <div class="flex justify-center">
-                <button class="text-blue-600 flex font-semibold items-center">
+                <button id="addExperienceBtn" class="text-blue-600 flex font-semibold items-center">
                     <i class="fas fa-plus-circle mr-2"></i>
                     TAMBAHKAN PENGALAMAN KERJA
                 </button>
             </div>
         </div>
+
+        <script>
+            // About Me Modal
+            const aboutMeModal = document.getElementById('aboutMeModal');
+            const addAboutMeBtn = document.getElementById('addAboutMeBtn');
+            const closeAboutMeModal = document.getElementById('closeAboutMeModal');
+            const cancelAboutMeBtn = document.getElementById('cancelAboutMeBtn');
+        
+            addAboutMeBtn.addEventListener('click', () => {
+                aboutMeModal.classList.remove('hidden');
+            });
+        
+            closeAboutMeModal.addEventListener('click', () => {
+                aboutMeModal.classList.add('hidden');
+            });
+        
+            cancelAboutMeBtn.addEventListener('click', () => {
+                aboutMeModal.classList.add('hidden');
+            });
+        
+            // Work Experience Modal
+            const workExperienceModal = document.getElementById('workExperienceModal');
+            const addWorkExperienceBtn = document.getElementById('addWorkExperienceBtn');
+            const closeWorkExperienceModal = document.getElementById('closeWorkExperienceModal');
+            const cancelWorkExperienceBtn = document.getElementById('cancelWorkExperienceBtn');
+        
+            addWorkExperienceBtn.addEventListener('click', () => {
+                workExperienceModal.classList.remove('hidden');
+            });
+        
+            closeWorkExperienceModal.addEventListener('click', () => {
+                workExperienceModal.classList.add('hidden');
+            });
+        
+            cancelWorkExperienceBtn.addEventListener('click', () => {
+                workExperienceModal.classList.add('hidden');
+            });
+        </script>
 
         <!-- Pendidikan -->
         <div class="mt-12 border-t border-gray-300 pt-4">
@@ -382,10 +412,9 @@
             <div class="mt-12 border-t border-gray-300 pt-4">
                 <h2 class="text-xl font-semibold text-left">SERTIFIKAT</h2>
                 <p class="mt-2 mb-2 text-gray-600 text-center">
-                    Beritahu prestasimu dengan menambahkan sertifikat disini.
-                </p>
+                    Beritahu prestasimu dengan menambahkan sertifikat disini.                </p>
                 <div class="flex justify-center">
-                    <button class="text-blue-600 font-semibold flex items-center">
+                    <button id="addResumeBtn" class="text-blue-600 font-semibold flex items-center">
                         <i class="fas fa-plus-circle text-bold mr-2"></i>
                         TAMBAHKAN SERTIFIKAT
                     </button>
@@ -422,8 +451,34 @@
         </div>
     </div>
 
+        <!-- Modal Sertifikat -->
+        <div id="sertifikatModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-sm">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-lg font-semibold">Sertifikat</h2>
+                    <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <p class="text-sm text-gray-700 mb-4">77,4% perusahaan menganggap resume sangat penting dalam lamaran
+                    pekerjaan.</p>
+                <div class="border-2 border-dashed border-blue-400 rounded-lg p-4 mb-4 text-center cursor-pointer">
+                    <i class="fas fa-upload text-blue-400 mb-2"></i>
+                    <p class="text-blue-400">Upload Sertifikat-mu</p>
+    
+                    <!-- File input yang sebelumnya hidden, diubah menjadi terintegrasi -->
+                    <input id="fileUpload" type="file" class="hidden" accept=".pdf,.doc,.docx">
+                </div>
+                <p id="fileName" class="text-xs text-gray-500 mb-4">Ukuran maksimum dokumen: 5 MB</p>
+                <div class="flex justify-end space-x-2">
+                    <button id="cancelBtn"
+                        class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">Batal</button>
+                    <button id="saveBtn" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Simpan</button>
+                </div>
+            </div>
+        </div>
 
-    <!-- Script -->
+            <!-- Script Sertifikat -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const addResumeBtn = document.getElementById('addResumeBtn');
@@ -482,6 +537,65 @@
         });
     </script>
 
+
+    <!-- Script Resume -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const addResumeBtn = document.getElementById('addResumeBtn');
+            const resumeModal = document.getElementById('resumeModal');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const cancelBtn = document.getElementById('cancelBtn');
+            const fileUpload = document.getElementById('fileUpload');
+            const fileName = document.getElementById('fileName');
+
+            // Buka Modal
+            addResumeBtn.addEventListener('click', () => {
+                resumeModal.classList.remove('hidden');
+            });
+
+            // Tutup Modal dengan Tombol Close
+            closeModalBtn.addEventListener('click', () => {
+                resumeModal.classList.add('hidden');
+            });
+
+            // Tutup Modal dengan Tombol Batal
+            cancelBtn.addEventListener('click', () => {
+                resumeModal.classList.add('hidden');
+            });
+
+            // Menambahkan event listener untuk menampilkan input file saat area diklik
+            const uploadArea = document.querySelector('.border-dashed');
+            const fileInput = document.getElementById('fileUpload');
+
+            uploadArea.addEventListener('click', () => {
+                fileInput.click(); // Memicu klik pada input file
+            });
+
+            // Tampilkan Nama File yang Dipilih
+            fileUpload.addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                if (file) {
+                    if (file.size <= 5 * 1024 * 1024) { // Batas ukuran file 5 MB
+                        fileName.textContent = `File yang dipilih: ${file.name}`;
+                    } else {
+                        alert("Ukuran file terlalu besar. Maksimum 5 MB.");
+                        fileUpload.value = ""; // Reset input file
+                    }
+                }
+            });
+
+            // Simpan File
+            document.getElementById('saveBtn').addEventListener('click', () => {
+                const file = fileUpload.files[0];
+                if (!file) {
+                    alert("Harap unggah file terlebih dahulu.");
+                    return;
+                }
+                alert(`File "${file.name}" berhasil diunggah!`);
+                resumeModal.classList.add('hidden');
+            });
+        });
+    </script>
 
     <!-- Modal Pendidikan-->
     <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50" id="education-modal"
