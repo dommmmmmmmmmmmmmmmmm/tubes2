@@ -1,5 +1,5 @@
 <?php
-include "dbconfig.php";
+include "koneksi.php"; // Meng-include file koneksi.php
 
 // Query untuk mendapatkan data lowongan
 $query = "SELECT * FROM lowongan";
@@ -65,7 +65,7 @@ $currentDate = date("Y-m-d"); // Format YYYY-MM-DD
                             <?php while ($row = mysqli_fetch_assoc($result)): ?>
                                 <?php 
                                     // Mendapatkan tanggal buka dan tutup tanpa waktu (menjamin format Y-m-d)
-                                    $tanggalBuka = date("Y-m-d", strtotime($row['tanggal_buka'])); 
+                                    $tanggalB uka = date("Y-m-d", strtotime($row['tanggal_buka'])); 
                                     $tanggalTutup = date("Y-m-d", strtotime($row['tanggal_tutup'])); 
 
                                     // Menentukan status berdasarkan tanggal sekarang

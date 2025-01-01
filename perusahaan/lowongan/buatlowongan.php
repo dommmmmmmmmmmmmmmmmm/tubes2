@@ -1,5 +1,5 @@
 <?php
-include "dbconfig.php";
+include "koneksi.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $posisi = $_POST['posisi'];
