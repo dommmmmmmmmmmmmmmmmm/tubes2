@@ -4,16 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header</title>
+    <title>Workify with Animation</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f8f8;
+            color: white;
+        }
+
+        .hero-bg {
+            background: linear-gradient(120deg, #3b82f6 30%, #1e40af 70%);
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(200, 200, 200, 0.4);
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #3b82f6, #1e40af);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+        }
+
         .slider {
             display: flex;
             overflow-x: auto;
+            gap: 1rem;
             scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
         }
 
         .slider::-webkit-scrollbar {
@@ -21,20 +45,17 @@
         }
 
         .slide {
-            scroll-snap-align: start;
-            flex: none;
-            width: 100%;
-            max-width: 300px;
-            margin-right: 16px;
+            flex: 0 0 auto;
+            width: 250px;
+            scroll-snap-align: center;
         }
     </style>
 </head>
 
-<body>
-
-    <header class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 shadow-lg">
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-blue-400/80 backdrop-blur-md">
         <div class="container mx-auto flex justify-between items-center px-6 py-4">
-            <!-- Logo -->
             <div class="flex items-center space-x-4">
                 <img src="../asset/img/logo.png" alt="Workify Logo" class="h-10">
                 <div>
@@ -42,67 +63,73 @@
                     <p class="text-sm text-blue-200">Find Your Dream Job</p>
                 </div>
             </div>
-
-            <!-- Navigation Menu -->
             <nav class="hidden md:flex items-center space-x-6">
-                <a href="../perusahaan/daftar.html" class="font-bold text-white hover:text-yellow-300">Untuk
-                    Perusahaan</a>
+                <a href="./perusahaan/daftar.html" class="text-white text-bold hover:text-blue-900 transition-colors">Untuk Perusahaan</a>
+                <div class="relative group">
+                    <a href="#" id="tentang-kami-link" class="text-white hover:bg-blue-900 px-6 py-3 rounded-lg transition duration-300">
+                        Tentang Kami
+                    </a>
+                    <!-- Popup -->
+                    <div class="popup hidden absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-72 p-4 bg-white border border-gray-300 rounded-lg shadow-lg z-10 group-hover:block">
+                        <h1 class="text-lg font-semibold text-black">Hello!</h1>
+                        <p class="mt-2 text-sm text-gray-600">
+                            Workify adalah platform inovatif yang memberikan solusi baru bagi mereka yang mencari kesempatan karir terbaik. Dengan pendekatan yang segar dan modern, kami menghubungkan pencari kerja dengan berbagai perusahaan terkemuka, membuka peluang baru untuk masa depan yang lebih cerah. Temukan pekerjaan impian Anda dan ambil langkah pertama menuju karier yang sukses bersama kami!
+                        </p>
+                        <a href="#" class="mt-4 inline-block text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg transition duration-300">
+                            Read more →
+                        </a>
+                    </div>
+                </div>
             </nav>
-
-            <!-- Hamburger Menu -->
-            <button id="menu-toggle" class="md:hidden flex items-center text-white focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden bg-blue-600 text-white">
-            <nav class="flex flex-col space-y-4 py-4 px-6">
-                <a href="../perusahaan/daftar.html" class="font-bold text-white hover:text-yellow-300">Untuk
-                    Perusahaan</a>
-            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hidden md:block text-white hover:text-blue-300 transition-colors">Masuk</a>
+                <a href="#" class="btn-primary px-4 py-2 rounded-full text-white">Daftar</a>
+                <button id="mobile-menu-toggle" class="md:hidden text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative bg-gradient-to-r from-blue-500 to-blue-400 text-white py-16 lg:py-24">
-        <!-- Background Image -->
-        <div class="absolute inset-0 bg-cover bg-center opacity-30"
-            style="background-image: url('https://source.unsplash.com/1600x900/?office,work');"></div>
-
-        <div class="relative z-10 max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <!-- Heading -->
-            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
-                Temukan Karier Impian Anda di <span class="text-blue-900">Workify</span>
-            </h1>
-            <!-- Subheading -->
-            <p class="mt-6 text-lg sm:text-xl text-blue-100">
-                Mulailah perjalanan Anda menuju masa depan yang lebih cerah. Jelajahi peluang kerja sesuai keahlian Anda
-                di sini.
-            </p>
-            <!-- Buttons -->
-            <div class="mt-8 flex justify-center space-x-4">
-                <a href="./pengguna/masuk.html"
-                    class="bg-blue-700 hover:bg-blue-900 text-white px-6 py-3 rounded-lg shadow-md text-lg font-medium transition-transform transform hover:scale-105">
-                    Masuk Sekarang
-                </a>
-                <a href="./pengguna/daftar.html"
-                    class="border border-gray-200 text-white hover:bg-blue-400 hover:text-white px-6 py-3 rounded-lg text-lg font-medium transition-transform transform hover:scale-105">
-                    Daftar Sekarang
-                </a>
-            </div>
+<!-- Hero Section -->
+<section class="pt-24 pb-16">
+    <div class="hero-bg p-12 max-w-4xl mx-auto text-center rounded-2xl relative overflow-hidden">
+        <!-- Animasi Gambar Latar -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://source.unsplash.com/1600x900/?technology,work');"></div>
+        
+        <h1 id="hero-heading" class="text-4xl sm:text-5xl font-extrabold text-white mb-6 opacity-0 animate__animated animate__fadeIn animate__delay-1s">
+            Temukan Karier Impian Anda
+        </h1>
+        <p id="hero-subheading" class="text-xl text-white/90 mb-8 opacity-0 animate__animated animate__fadeIn animate__delay-2s">
+            Mulai perjalanan menuju masa depan yang lebih cerah dengan peluang kerja terbaik
+        </p>
+        
+        <div class="flex justify-center space-x-6 animate__animated animate__fadeIn animate__delay-3s">
+            <a href="#" id="cta-button-1" class="bg-blue-500 px-6 py-3 rounded-lg text-white font-semibold hover:scale-105 transition-transform transform-gpu opacity-0 animate__animated animate__fadeIn animate__delay-4s">
+                Mulai Sekarang
+            </a>
+            <a href="#" id="cta-button-2" class="bg-white/20 px-6 py-3 rounded-lg text-white font-semibold hover:bg-white/30 transition-colors opacity-0 animate__animated animate__fadeIn animate__delay-5s">
+                Pelajari Lebih Lanjut
+            </a>
         </div>
-    </section>
+        
+    </div>
+</section>
 
-    <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <h1 class="text-2xl font-bold text-gray-900">Temukan perusahaan Anda berikutnya</h1>
-        <p class="mt-2 text-gray-600">Jelajahi profil perusahaan untuk menemukan tempat kerja yang tepat bagi Anda.
-            Pelajari tentang pekerjaan, ulasan, budaya perusahaan, keuntungan, dan tunjangan.</p>
-        <div class="relative mt-8">
-            <div class="slider flex">
+<!-- Include Animation Library -->
+<script src="https://cdn.jsdelivr.net/npm/animate.css"></script>
+
+
+    <!-- Perusahaan Section -->
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-8">Perusahaan Terkemuka</h2>
+        <div class="relative">
+            <div class="slider">
+                <!-- Slider items -->
                 <div class="slide bg-white p-6 rounded-lg shadow-md">
                     <img src="./asset/img/bni.png" class="h-12 mx-auto" height="50" />
                     <h2 class="mt-4 text-lg font-semibold text-gray-900 text-center">BNI</h2>
@@ -128,48 +155,32 @@
                     <h2 class="mt-4 text-lg font-semibold text-gray-900 text-center">Gojek</h2>
                     <p class="mt-2 text-center text-gray-600">3 Pekerjaan</p>
                 </div>
+                <div class="slide bg-white p-6 rounded-lg shadow-md">
+                    <img src="./asset/img/kredivo.png" class="h-12 mx-auto" height="50" />
+                    <h2 class="mt-4 text-lg font-semibold text-gray-900 text-center">Kredivo</h2>
+                    <p class="mt-2 text-center text-gray-600">20 Pekerjaan</p>
+                </div>
             </div>
-            <button class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
-                onclick="scrollLeft()">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
-                onclick="scrollRight()">
-                <i class="fas fa-chevron-right"></i>
-            </button>
         </div>
-    </div>
+        </div>
+    </section>
 
-    <!-- Keunggulan -->
-    <section class="bg-gray-50 py-12">
-        <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-bold text-gray-900 text-center mb-8">Keunggulan Menggunakan Website Kami</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div
-                    class="bg-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
-                    <div class="p-6 text-center">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Ribuan Lowongan</h3>
-                        <p class="text-gray-600">Temukan ribuan pekerjaan sesuai dengan keahlian Anda di berbagai
-                            industri.</p>
-                    </div>
+    <!-- Keunggulan Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Mengapa Memilih Workify?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-blue-800 shadow-lg p-8 rounded-lg text-center hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold text-white mb-4">Ribuan Lowongan</h3>
+                    <p class="text-white">Temukan peluang kerja dari berbagai industri</p>
                 </div>
-                <!-- Card 2 -->
-                <div
-                    class="bg-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
-                    <div class="p-6 text-center">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Template CV Profesional</h3>
-                        <p class="text-gray-600">Buat CV profesional yang menarik untuk meningkatkan peluang Anda.</p>
-                    </div>
+                <div class="bg-blue-800 shadow-lg p-8 rounded-lg text-center hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold text-white mb-4">CV Profesional</h3>
+                    <p class="text-white">Buat CV yang menarik dan kompetitif</p>
                 </div>
-                <!-- Card 3 -->
-                <div
-                    class="bg-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
-                    <div class="p-6 text-center">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Konsultasi Karier</h3>
-                        <p class="text-gray-600">Dapatkan saran karier dari para ahli untuk membantu Anda berkembang.
-                        </p>
-                    </div>
+                <div class="bg-blue-800 shadow-lg p-8 rounded-lg text-center hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold text-white mb-4">Konsultasi Karier</h3>
+                    <p class="text-white">Dapatkan saran dari para ahli untuk pengembangan karier Anda</p>
                 </div>
             </div>
         </div>
@@ -183,18 +194,20 @@
     </footer>
 
     <script>
-        function scrollLeft() {
-            document.querySelector('.slider').scrollBy({
-                left: -300,
-                behavior: 'smooth'
-            });
-        }
-        function scrollRight() {
-            document.querySelector('.slider').scrollBy({
-                left: 300,
-                behavior: 'smooth'
-            });
-        }
+        // GSAP Animations
+        gsap.timeline()
+            .fromTo("#hero-heading", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" })
+            .fromTo("#hero-subheading", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, ease: "power2.out" }, "-=0.8")
+            .fromTo("#cta-button-1", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.6")
+            .fromTo("#cta-button-2", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.6");
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
     </script>
 </body>
 
