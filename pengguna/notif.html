@@ -15,7 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 flex flex-col min-h-screen">
     <header class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 shadow-lg sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center px-6 py-4">
             <!-- Logo -->
@@ -29,270 +29,137 @@
 
             <!-- Navigation Menu -->
             <nav class="hidden md:flex items-center space-x-6">
-                <a href="beranda.html" class="text-white font-medium hover:text-yellow-300 transition">Cari
-                    Lowongan</a>
+                <a href="beranda.html" class="text-white font-medium hover:text-yellow-300 transition">Cari Lowongan</a>
                 <a href="template.html" class="text-white font-medium hover:text-yellow-300 transition">Template CV</a>
 
                 <!-- Action Buttons -->
                 <div class="flex items-center space-x-4">
                     <!-- Notification Icon -->
                     <a href="notif.html" class="hover:scale-110 transition">
-                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
+                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 5.365V3m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175 0 .593 0 1.193-.538 1.193H5.538c-.538 0-.538-.6-.538-1.193 0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 12 5.365Z" />
                         </svg>
                     </a>
-                    <!-- Chat Icon -->
-                    <a href="chat.html" class="hover:scale-110 transition">
-                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                d="M9 17h6l3 3v-3h2V9h-2M4 4h11v8H9l-3 3v-3H4V4Z" />
-                        </svg>
-                    </a>
 
+                    <!-- Profile Dropdown -->
                     <div class="relative">
-                        <!-- Profile Button with Elongated Border -->
-                        <button id="profile-toggle"
-                            class="flex items-center space-x-3 focus:outline-none px-4 py-2 rounded-full border-2 border-blue-600">
-                            <!-- Avatar -->
-                            <div
-                                class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center shadow-md">
-                                <img src="../asset/img/lisa.jpg" alt="Profile"
-                                    class="w-10 h-10 rounded-full border-2 border-white">
+                        <button id="profile-toggle" class="flex items-center space-x-3 focus:outline-none px-4 py-2 rounded-full border-2 border-blue-600">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center shadow-md">
+                                <img src="../asset/img/lisa.jpg" alt="Profile" class="w-10 h-10 rounded-full border-2 border-white">
                             </div>
-                            <!-- Username and Icon -->
                             <span class="text-lg font-semibold text-white flex items-center space-x-1">
                                 <span>DELL</span>
-                                <!-- Small Icon next to the username -->
-                                <svg id="dropdown-icon"
-                                    class="w-4 h-4 text-white transform transition-transform duration-300"
-                                    xmlns ="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 12l7-7 7 7" />
+                                <svg id="dropdown-icon" class="w-4 h-4 text-white transform transition-transform duration-300"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12l7-7 7 7" />
                                 </svg>
                             </span>
                         </button>
 
                         <!-- Dropdown Menu -->
-                        <div id="profile-dropdown"
-                            class="hidden absolute right-0 mt-3 w-56 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 transition-all duration-200">
+                        <div id="profile-dropdown" class="hidden absolute right-0 mt-3 w-56 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                             <div class="flex flex-col">
-                                <a href="lihatprofil.html"
-                                    class="flex items-center px-4 py-3 text-gray-700 hover:bg-gradient-to-r from-blue-500 to-blue-400 hover:text-white transition">
-                                    <i class="fas fa-user mr-3 text-blue-500 group-hover:text-white"></i> Profil Saya
+                                <a href="lihatprofil.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gradient-to-r from-blue-500 to-blue-400 hover:text-white transition">
+                                    <i class="fas fa-user mr-3 text-blue-500"></i> Profil Saya
                                 </a>
-                                <a href="lamaransaya.html"
-                                    class="flex items-center px-4 py-3 text-gray-700 hover:bg-gradient-to-r from-blue-500 to-blue-400 hover:text-white transition">
-                                    <i class="fas fa-file-alt mr-3 text-blue-500 group-hover:text-white"></i> Lamaran
-                                    Saya
+                                <a href="lamaransaya.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gradient-to-r from-blue-500 to-blue-400 hover:text-white transition">
+                                    <i class="fas fa-file-alt mr-3 text-blue-500"></i> Lamaran Saya
                                 </a>
-                                <a href="logout.html"
-                                    class="flex items-center px-4 py-3 text-gray-700 hover:bg-red-500 hover:text-white transition">
-                                    <i class="fas fa-power-off mr-3 text-red-500 group-hover:text-white"></i> Keluar
+                                <a href="logout.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-red-500 hover:text-white transition">
+                                    <i class="fas fa-power-off mr-3 text-red-500"></i> Keluar
                                 </a>
                             </div>
                         </div>
                     </div>
+                </div>
             </nav>
     </header>
 
-    <!-- JavaScript to Toggle the Dropdown -->
-    <script>
-        // Toggle the Profile Dropdown
-        document.getElementById('profile-toggle').addEventListener('click', function (event) {
-            const dropdown = document.getElementById('profile-dropdown');
-            dropdown.classList.toggle('hidden');
-
-            // Stop the event from propagating to the document level
-            event.stopPropagation();
-        });
-
-        // Get the dropdown icon element
-        const icon = document.getElementById('dropdown-icon');
-
-        // Toggle icon rotation on click
-        icon.addEventListener('click', function () {
-            icon.classList.toggle('rotate-180'); // This will rotate the icon by 180 degrees
-        });
-    </script>
-
-    <!-- Notification Container -->
-    <div id="notification-container" class="fixed top-20 right-4 z-[100] space-y-4 w-80">
-        <!-- Notification Templates will be dynamically added here -->
-    </div>
-
-    <!-- Main Content Area -->
+    <!-- Main Content -->
     <main class="flex-grow container mx-auto px-4 py-8">
         <h1 class="text-3xl font-bold text-gray-800 mb-6">Notifikasi</h1>
-        
-        <!-- Notification List -->
-        <div id="notification-list" class="space-y-4">
-            <!-- Notifications will be dynamically populated -->
+        <div id="notification-container" class="space-y-4 w-full">
+            <!-- Notifications will appear here -->
         </div>
     </main>
 
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 text-white py-6">
+        <div class="text-center container mx-auto">
+            <p>&copy; 2024 WORKIFY. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
     <script>
-        // Notification Manager Class
         class NotificationManager {
             constructor() {
                 this.container = document.getElementById('notification-container');
-                this.list = document.getElementById('notification-list');
             }
 
-            // Method to create a toast notification
-            createToastNotification(type, message, options = {}) {
+            createNotification(type, message, options = {}) {
                 const notification = document.createElement('div');
-                notification.classList.add(
-                    'notification-toast', 
-                    'transform', 
-                    'transition-all', 
-                    'duration-300', 
-                    'ease-in-out',
-                    'bg-white', 
-                    'shadow-lg', 
-                    'rounded-lg', 
-                    'p-4', 
-                    'border-l-4',
-                    type === 'job' ? 'border-blue-500' : 'border-green-500'
-                );
+                notification.className = 'bg-white shadow-md p-4 rounded-lg border-l-4 ' +
+                    (type === 'success' ? 'border-green-500' : 'border-blue-500');
 
-                // Destructure additional info with default values
-                const {
-                    jobTitle = 'Posisi Tersedia',
-                    company = 'Perusahaan Terkemuka',
-                    location = 'Indonesia',
-                    deadline = 'Segera'
-                } = options.additionalInfo || {};
+                const { jobTitle, company, status, statusColor, zoom } = options;
 
                 notification.innerHTML = `
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0">
-                            <img class="h-10 w-10 rounded-full" 
-                                 src="${options.logo || './default-logo.png'}" 
-                                 alt="Company Logo">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-medium text-gray-800">${message}</p>
+                            <p class="text-sm text-gray-600">${jobTitle} - ${company}</p>
+                            <p class="text-sm text-${statusColor}-500">${status}</p>
                         </div>
-                        <div class="ml-3 w-0 flex-1">
-                            <p class="text-sm font-medium text-gray-900">
-                                ${type === 'job' ? 'Lowongan Baru!' : 'Rekomendasi'}
-                            </p>
-                            <p class="mt-1 text-sm text-gray-500">${message}</p>
-                            
-                            <!-- Tambahan Informasi -->
-                            <div class="mt-2 bg-gray-50 rounded-lg p-3">
-                                <div class="flex justify-between items-center">
-                                    <div>
-                                        <p class="text-xs font-semibold text-gray-700">${jobTitle}</p>
-                                        <p class="text-xs text-gray-500">${company}</p>
-                                    </div>
-                                    <div class="text-right">
-                                        <p class="text-xs text-gray-500">
-                                            <i class="fas fa-map-marker-alt mr-1"></i>
-                                            ${location}
-                                        </p>
-                                        <p class="text-xs text-gray-500">
-                                            <i class="fas fa-clock mr-1"></i>
-                                            ${deadline}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-2 flex space-x-2">
-                                <button class="detail-btn bg-blue-500 text-white px-2 py-1 rounded text-xs hover:bg-blue-600">
-                                    Lihat Detail </button>
-                                <button class="close-notification text-gray-500 px-2 py-1 rounded text-xs hover:bg-gray-100">
-                                    Tutup
-                                </button>
-                            </div>
-                        </div>
+                        <button class="text-gray-400 hover:text-gray-600">&times;</button>
                     </div>
                 `;
 
-                // Add close functionality
-                const closeBtn = notification.querySelector('.close-notification');
-                closeBtn.addEventListener('click', () => this.removeNotification(notification));
-
+                notification.querySelector('button').addEventListener('click', () => notification.remove());
                 this.container.appendChild(notification);
-                this.animateNotification(notification, 'in');
 
-                // Auto remove after 5 seconds
-                setTimeout(() => this.removeNotification(notification), 5000);
-
-                return notification;
-            }
-
-            // Animate notification
-            animateNotification(notification, direction) {
-                if (direction === 'in') {
-                    gsap.fromTo(
-                        notification, 
-                        { opacity: 0, x: 100 }, 
-                        { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }
-                    );
-                } else {
-                    gsap.to(
-                        notification, 
-                        { 
-                            opacity: 0, 
-                            x: 100, 
-                            duration: 0.5, 
-                            ease: "power2.in",
-                            onComplete: () => {
-                                this.container.removeChild(notification);
-                            }
-                        }
-                    );
+                // If zoom is enabled, add zoom animation using GSAP
+                if (zoom) {
+                    gsap.from(notification, { scale: 0, duration: 0.5 });
                 }
-            }
-
-            // Remove notification
-            removeNotification(notification) {
-                this.animateNotification(notification, 'out');
-            }
-
-            // Add job notification
-            addJobNotification(message, logo, options = {}) {
-                this.createToastNotification('job', message, { logo, additionalInfo: options.additionalInfo });
-            }
-
-            // Add recommendation notification
-            addRecommendationNotification(message, options = {}) {
-                this.createToastNotification('recommendation', message, { additionalInfo: options.additionalInfo });
             }
         }
 
-        // Initialize Notification Manager
-        const notificationManager = new NotificationManager();
-
-        // Example usage
+        const manager = new NotificationManager();
         document.addEventListener('DOMContentLoaded', () => {
-            notificationManager.addJobNotification('PT Telkom Indonesia membuka lowongan Software Engineer', './asset/img/telkom-logo.png', {
-                additionalInfo: {
-                    jobTitle: 'Software Engineer',
-                    company: 'PT Telkom Indonesia',
-                    location: 'Jakarta, Indonesia',
-                    deadline: 'Tersedia 30 Hari Lagi'
-                }
+            manager.createNotification('success', 'Pengajuan Lamaran', {
+                jobTitle: 'ui ux',
+                company: 'PT bank Indonesia',
+                status: 'Sedang Diproses',
+                statusColor: 'blue',
+                zoom: true  // Enable zoom effect
             });
-            notificationManager.addRecommendationNotification('Kami menemukan 5 lowongan sesuai keahlian Anda', {
-                additionalInfo: {
-                    jobTitle: 'Rekomendasi Khusus',
-                    company: 'Berbagai Perusahaan',
-                    location: 'Seluruh Indonesia',
-                    deadline: 'Segera Daftar'
-                }
+
+            manager.createNotification('success', 'Tes Seleksi atau Ujian', {
+                jobTitle: 'ui ux',
+                company: 'PT Tel Indonesia',
+                status: 'Sedang Diproses',
+                statusColor: 'blue',
+                zoom: true  // Enable zoom effect
+            });
+
+            manager.createNotification('success', 'Tes Kesehatan', {
+                jobTitle: 'ui ux',
+                company: 'PT POS Indonesia',
+                status: 'Sedang Diproses',
+                statusColor: 'blue',
+                zoom: true  // Enable zoom effect
+            });
+
+            manager.createNotification('success', 'Mulai Bekerja', {
+                jobTitle: 'ui ux',
+                company: 'PT Telkom Indonesia',
+                status: 'Selesai',
+                statusColor: 'green',
+                zoom: false  // Disable zoom effect
             });
         });
     </script>
-
-<footer class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 text-white py-6">
-    <div class="flex justify-center items-center container mx-auto">
-        <p class="text-center">&copy; 2024 WORKIFY. All Rights Reserved.</p>
-    </div>
-</footer>
-
 </body>
 </html>
