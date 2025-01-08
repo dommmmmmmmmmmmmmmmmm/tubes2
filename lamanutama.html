@@ -82,8 +82,8 @@
                 </div>
             </nav>
             <div class="flex items-center space-x-4">
-                <a href="#" class="hidden md:block text-white hover:text-blue-300 transition-colors">Masuk</a>
-                <a href="#" class="btn-primary px-4 py-2 rounded-full text-white">Daftar</a>
+                <a href="./pengguna/masuk.html" class="hidden md:block text-white hover:text-blue-300 transition-colors">Masuk</a>
+                <a href="./pengguna/daftar.html" class="btn-primary px-4 py-2 rounded-full text-white">Daftar</a>
                 <button id="mobile-menu-toggle" class="md:hidden text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -186,29 +186,99 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 text-white py-6">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 WORKIFY. All Rights Reserved.</p>
+<!-- Grafik Section -->
+<section class="py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Statistik Pekerjaan yang Tersedia</h2>
+        <div class="max-w-4xl mx-auto">
+            <!-- Chart Container -->
+            <canvas id="workifyChart"></canvas>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script>
-        // GSAP Animations
-        gsap.timeline()
-            .fromTo("#hero-heading", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" })
+<!-- Include Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // Membuat Grafik menggunakan Chart.js
+    const ctx = document.getElementById('workifyChart').getContext('2d');
+    const workifyChart = new Chart(ctx, {
+        type: 'bar', // Jenis grafik, bisa diganti menjadi 'line', 'pie', dll
+        data: {
+            labels: ['BNI', 'Pertamina', 'Fiverr', 'Telkom', 'Gojek', 'Kredivo'], // Label untuk setiap perusahaan
+            datasets: [{
+                label: 'Jumlah Pekerjaan',
+                data: [6, 10, 13, 36, 3, 20], // Data untuk setiap perusahaan
+                backgroundColor: [
+                    'rgba(59, 130, 246, 0.6)',  // BNI
+                    'rgba(66, 103, 178, 0.6)',  // Pertamina
+                    'rgba(48, 85, 148, 0.6)',  // Fiverr
+                    'rgba(17, 59, 123, 0.6)',  // Telkom
+                    'rgba(0, 72, 144, 0.6)',  // Gojek
+                    'rgba(0, 56, 112, 0.6)'   // Kredivo
+                ],
+                borderColor: [
+                    'rgba(59, 130, 246, 1)',  // BNI
+                    'rgba(66, 103, 178, 1)',  // Pertamina
+                    'rgba(48, 85, 148, 1)',   // Fiverr
+                    'rgba(17, 59, 123, 1)',   // Telkom
+                    'rgba(0, 72, 144, 1)',    // Gojek
+                    'rgba(0, 56, 112, 1)'     // Kredivo
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.raw + ' Pekerjaan'; // Custom tooltip
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true, // Mulai sumbu Y dari 0
+                    ticks: {
+                        stepSize: 5, // Ukuran step untuk ticks
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+
+<script>
+    // GSAP Animations
+    gsap.timeline()
+    .fromTo("#hero-heading", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" })
             .fromTo("#hero-subheading", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, ease: "power2.out" }, "-=0.8")
             .fromTo("#cta-button-1", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.6")
             .fromTo("#cta-button-2", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.6");
+            
+            // Mobile Menu Toggle
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            </script>
 
-        // Mobile Menu Toggle
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
+<!-- Footer -->
+<footer class="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 text-white py-6">
+    <div class="container mx-auto text-center">
+        <p>&copy; 2024 WORKIFY. All Rights Reserved.</p>
+    </div>
+</footer>
 
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
 </body>
-
 </html>
